@@ -278,8 +278,8 @@ An *operational value* is a value chosen by the simulation team; ideally, these 
 
 *Last updated: May 18, 2020*
 
-Label|Authority|Title|URL|Note|Value
------|-----|-----|-----|-----|-----|-----|-----
+Label | Authority | Title | URL | Note | Value
+----- | ----- | ----- | ----- | ----- | ----- | ----- | -----
 Age below which youth are considered infants.|Operational Value||||4
 Assumption #1||||Individuals not in assisted living or who are infants go to workplaces at night for necessities, entertainment, etc. This behaviour should be expanded.|N/A
 Average number of days that coronavirus can survive on surfaces|Harvard Health Publishing|How long can the coronavirus that causes COVID-19 survive on surfaces?|https://www.health.harvard.edu/diseases-and-conditions/covid-19-basics|The given range says 'up to' a few hours or days, depending on material. This average will produce that range because rates (where this value is used) are drawn from a poisson distribution. Quote: COVID-19 coronavirus can survive up to four hours on copper, up to 24 hours on cardboard, and up to two to three days on plastic and stainless steel. The researchers also found that this virus can hang out as droplets in the air for up to three hours before they fall. But most often they will fall more quickly.|1.0
