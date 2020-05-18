@@ -1,0 +1,20 @@
+﻿locationId,groupType,minEmployees,maxEmployees,minAttendees,maxAttendees,number,label,citation
+"Unity, Town [Census subdivision], Saskatchewan",Workplace,0,0,0,0,200,,Placeholder
+Unity-CBD,Workplace,1,10,0,0,50,,Placeholder
+Unity-CBD,Workplace,10,20,0,0,20,,Placeholder
+Unity-CBD,Workplace,20,30,0,0,4,,Placeholder
+Unity-LutherPlace,AssistedLiving,5,5,49,49,1,,Placeholder
+Unity-UCHS,SecondarySchool,20,20,100,200,1,,Placeholder
+Unity-Industrial,Workplace,10,20,0,0,30,,Placeholder
+Unity-UnityPublicSchool,PrimarySchool,20,20,100,200,1,,Placeholder
+Unity-StPeters,PrimarySchool,20,20,100,200,1,,Placeholder
+Unity-LTC,AssistedLiving,20,20,35,35,1,Luther Place,"references.use(
+	35,
+	references.citation(""Number of people in LTC in the hospital"")
+		.note(""32 long term care beds, 3 'alternative level of care' beds, which I assume can be used for that purpose"")
+		.title(""Unity and District Health Centre"")
+		.authority(""Saskatchewan Health Authority"")
+		.URL(""https://www.hrha.sk.ca/health-facilities/Pages/Unity.aspx"")
+		.accessed(2020, 4, 13)
+)"
+Unity-Hospital,Hospital,20,20,0,0,1,,Placeholder

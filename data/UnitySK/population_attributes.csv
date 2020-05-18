@@ -1,0 +1,38 @@
+locationId,attribute,value
+"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",Number of Households,160
+"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",P(Partnered Male),0.7428571428571429
+"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",P(Partnered Female),0.8387096774193549
+"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",Is Rural Population,False
+"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",Household Size 1,30
+"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",Household Size 2,80
+"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",Household Size 3,15
+"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",Household Size 4,30
+"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",Household Size 5+,15
+"Unity, Town [Census subdivision], Saskatchewan",Number of Households,1105
+"Unity, Town [Census subdivision], Saskatchewan",P(Partnered Male),0.6581632653061225
+"Unity, Town [Census subdivision], Saskatchewan",P(Partnered Female),0.6280193236714976
+"Unity, Town [Census subdivision], Saskatchewan",Is Rural Population,False
+"Unity, Town [Census subdivision], Saskatchewan",Household Size 1,395
+"Unity, Town [Census subdivision], Saskatchewan",Household Size 2,375
+"Unity, Town [Census subdivision], Saskatchewan",Household Size 3,110
+"Unity, Town [Census subdivision], Saskatchewan",Household Size 4,135
+"Unity, Town [Census subdivision], Saskatchewan",Household Size 5+,90
+Unity-LTC,Number of Households,1
+Unity-LTC,P(Partnered Male),0
+Unity-LTC,P(Partnered Female),0
+Unity-LTC,Is Rural Population,False
+Unity-LTC,Household Size 1,0
+Unity-LTC,Household Size 2,0
+Unity-LTC,Household Size 3,0
+Unity-LTC,Household Size 4,0
+Unity-LTC,Household Size 5+,1
+Unity-LTC,Is Assisted Living,TRUE
+Unity-LutherPlace,Number of Households,1
+Unity-LutherPlace,P(Partnered Male),0
+Unity-LutherPlace,P(Partnered Female),0
+Unity-LutherPlace,Is Rural Population,False
+Unity-LutherPlace,Household Size 1,0
+Unity-LutherPlace,Household Size 2,0
+Unity-LutherPlace,Household Size 3,0
+Unity-LutherPlace,Household Size 4,0
+Unity-LutherPlace,Household Size 5+,1

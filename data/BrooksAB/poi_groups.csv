@@ -1,0 +1,22 @@
+﻿locationId,groupType,minEmployees,maxEmployees,minAttendees,maxAttendees,number,label,citation
+"Brooks, City [Census subdivision], Alberta",Workplace,0,0,0,0,1000,,Placeholder for owner-operator businesses
+commercialCentral,Workplace,1,10,0,0,100,,"Ballparking from the number of businesses listed here, counted using number of h4 tags http://www.brookschamber.ab.ca/chamber-index.asp"
+commercialCentral,Workplace,10,20,0,0,50,,"Ballparking from the number of businesses listed here, counted using number of h4 tags http://www.brookschamber.ab.ca/chamber-index.asp"
+commercialCentral,Workplace,20,30,0,0,20,,"Ballparking from the number of businesses listed here, counted using number of h4 tags http://www.brookschamber.ab.ca/chamber-index.asp"
+commercialCentral,Workplace,30,50,0,0,10,,"Ballparking from the number of businesses listed here, counted using number of h4 tags http://www.brookschamber.ab.ca/chamber-index.asp"
+gisCommercialEast,Workplace,10,20,0,0,10,,Placeholder; ballpark from map
+gisCommercialEast,Workplace,20,30,0,0,2,,Placeholder; ballpark from map
+gisIndustrial,Workplace,10,20,0,0,50,,Placeholder; ballpark from map
+gisIndustrial,Workplace,20,30,0,0,20,,Placeholder; ballpark from map
+gisIndustrial,Workplace,30,50,0,0,10,,Placeholder; ballpark from map
+gisIndustrialEast,Workplace,10,10,0,0,1,,"Placeholder: looked on map, one business"
+griffinParkSchool,PrimarySchool,50,50,400,600,1,,Placeholder
+stJosephsCollegiate,SecondarySchool,50,50,400,600,1,,Placeholder
+brooksJuniorHighSchool,SecondarySchool,50,50,400,600,1,,Placeholder
+bchs,SecondarySchool,50,50,400,600,1,,Placeholder
+eastbrookElementarySchool,PrimarySchool,50,50,400,600,1,,Placeholder
+uplandsElementary,PrimarySchool,50,50,400,600,1,,Placeholder
+medicineHatCollege,TertiarySchool,50,50,200,300,1,,https://www.mhc.ab.ca/BrooksCampus
+holyFamilyAcademy,PrimarySchool,50,50,400,600,1,,Placeholder
+hospital,Hospital,100,100,0,0,1,,Placeholder
+jbsFoodCanadaIncPlant,Workplace,2400,2600,0,0,1,,Conversation with local who looked up Union figures
