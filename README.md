@@ -274,7 +274,7 @@ The following parameters are embedded in the simulation. They represent items as
 
 # Initial Parameters
 
-An *operational value* is a value chosen by the simulation team; ideally, these estimates should have little value on simulation results. A *placeholder value* is a parameter used by the simulation that should be improved with better data. These values may have more substantial effect on simulation results.
+An *operational value* is a value chosen by the simulation team; ideally, these estimates should have little value on simulation results. A *placeholder value* is a parameter used by the simulation that should be improved with better data. These values may have more substantial effect on simulation results. Note that you may need to scroll to the right to see the full table if viewing this on GitHub.
 
 *Last updated: May 18, 2020*
 
