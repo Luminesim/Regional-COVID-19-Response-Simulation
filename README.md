@@ -4,7 +4,7 @@
   
 (c) *Luminesim Simulation and Analytics*, 2020.
 
-Please consider contributing to our [GoFundMe campaign.](http://gf.me/u/x28ahx) For more information, contact us via [our website](www.luminesim.com/contact-us)
+Please consider contributing to our [GoFundMe campaign.](http://gf.me/u/x28ahx) For more information, contact us via [our website](http://www.luminesim.com/contact-us)
 
 
 ## Important:
@@ -32,10 +32,10 @@ Please read the rest of this document to ensure you understand the full list of 
 We welcome new data, bug reports, corrections, and suggestions for improvement. Please visit www.luminesim.com/rcrs to contribute.
 
 ## Who Are You?
-[Luminesim](www.luminesim.com) is a two-person simulation and analytics team. We have extensive history in health simulation, but we are not ourselves epidemiologists nor COVID-19 experts. We [welcome and seek input from these groups](www.luminesim.com/rcrs), especially those already familiar with agent-based simulation and modeling. Our goal is simply to provide a locally-tailored policy testing tool that can assist smaller communities already working with provincial and federal health authorities to address the impact of  COVID-19. **This means that under no circumstances should any community change local COVID-19 strategies without first consulting and gaining the consent of provincial and federal health authorities.**
+[Luminesim](http://www.luminesim.com) is a two-person simulation and analytics team. We have extensive history in health simulation, but we are not ourselves epidemiologists nor COVID-19 experts. We [welcome and seek input from these groups](http://www.luminesim.com/rcrs), especially those already familiar with agent-based simulation and modeling. Our goal is simply to provide a locally-tailored policy testing tool that can assist smaller communities already working with provincial and federal health authorities to address the impact of  COVID-19. **This means that under no circumstances should any community change local COVID-19 strategies without first consulting and gaining the consent of provincial and federal health authorities.**
 
 ## How Do I Open The Simulation?
-The simulation was built in [AnyLogic](www.anylogic.com) with supporting tools built in Java and Python. To view the model's structure, open `RCRS.alp` in [AnyLogic 8.5.x](www.anylogic.com). To compile and run the model you will need to follow the instructions at the end of this guide.
+The simulation was built in [AnyLogic](http://www.anylogic.com) with supporting tools built in Java and Python. To view the model's structure, open `RCRS.alp` in [AnyLogic 8.5.x](http://www.anylogic.com). To compile and run the model you will need to follow the instructions at the end of this guide.
 
 ## How Do You Know That This Works?
 There are two branches to ensuring a simulation works: verification and validation. In short, verification is ensuring that the simulation works as designed; validation is ensuring that the simulation produces sensible results.
@@ -222,7 +222,7 @@ This section is intended for simulation engineers, health modelers, and others i
 ## Notes for Engineers & Other Modelers
 The simulation's developers felt time was of the essence in developing and releasing this simulation. We have therefore focused heavily on simple mechanisms, simple state transitions, and simple individual behaviour. Design has been iterative to prioritize facets of emerging, real-world circumstances: while the simulation's results are constantly being internally verified and validated, this approach has come at the cost of engineering elegance. As time permits these are being improved.
 
-This model is built using [AnyLogic Professional](www.anylogic.com) (for the simulation ALP); Java, Gradle, and IntelliJ (for supporting code artifacts); and Python and PyCharm (for census data manipulation). At a minimum, you will need AnyLogic to view and run the simulation: based on your license type you may be limited to the size of community you can run in the simulation.
+This model is built using [AnyLogic Professional](http://www.anylogic.com) (for the simulation ALP); Java, Gradle, and IntelliJ (for supporting code artifacts); and Python and PyCharm (for census data manipulation). At a minimum, you will need AnyLogic to view and run the simulation: based on your license type you may be limited to the size of community you can run in the simulation.
 
 The simulation will require you to download and compile the three packages in [ModelUtilities project](https://github.com/Luminesim/ModelUtilities) and acquire the following JARs, which are downloaded upon compiling said project using Gradle.
 
@@ -240,10 +240,10 @@ The simulation will require you to download and compile the three packages in [M
 * sfm-util-8.2.2-sources.jar
 
 ## Notes for Those Interested in the Data
-Where possible, known data has been used and referenced. Where not possible, reasonable placeholders have been assigned. If any mechanism or data in this simulation is contradicted by or should be updated to use information available to you, [please let us know through our website.](www.luminesim.com/rcrs)
+Where possible, known data has been used and referenced. Where not possible, reasonable placeholders have been assigned. If any mechanism or data in this simulation is contradicted by or should be updated to use information available to you, [please let us know through our website.](http://www.luminesim.com/rcrs)
 
 ## Notes for Epidemiologists
-This model has focused heavily on the probability of infecting individuals via conversation and via contaminated surfaces. Other data, such as the number of conversations per hour, the rate at which COVID-19 expires on surfaces, etc. have been used to supplement these probabilities, relying on emergence to produce infection rates consistent with the real world. The model is therefore sensitive to these values, but we have attempted to pin down as many as possible (e.g. conversations per hour) and work backward from known infection rates to arrive at reasonable estimates. If you have data regarding these values or any new information regarding reproductive rates (e.g. `R0`), [please contact us through our website.](www.luminesim.com/rcrs)
+This model has focused heavily on the probability of infecting individuals via conversation and via contaminated surfaces. Other data, such as the number of conversations per hour, the rate at which COVID-19 expires on surfaces, etc. have been used to supplement these probabilities, relying on emergence to produce infection rates consistent with the real world. The model is therefore sensitive to these values, but we have attempted to pin down as many as possible (e.g. conversations per hour) and work backward from known infection rates to arrive at reasonable estimates. If you have data regarding these values or any new information regarding reproductive rates (e.g. `R0`), [please contact us through our website.](http://www.luminesim.com/rcrs)
 
 
 # Where Does this Differ From Other Simulations?
