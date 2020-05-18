@@ -278,7 +278,7 @@ An *operational value* is a value chosen by the simulation team; ideally, these 
 
 *Last updated: May 18, 2020*
 
-Label|Authority|Title|URL|Note|Value
+Label | Authority | Title | URL | Note | Value
 ---|---|---|---|---|---|---|---
 Age below which youth are considered infants.|Operational Value||||4
 Assumption #1||||Individuals not in assisted living or who are infants go to workplaces at night for necessities, entertainment, etc. This behaviour should be expanded.|N/A
