@@ -6260,11 +6260,14 @@ forEachLocation(
 			}
 		}
 		
-		// Any children left? Fail
+		// Any children left? Assign a random home.
 		if (!youth.isEmpty()) {
-			throw new IllegalStateException(String.format(
-				"%s LEFTOVER CHILDREN in %s", youth.size(), location.getName()
-			));
+			traceln("WARNING: %s LEFTOVER CHILDREN in %s", youth.size(), location.getName());
+			youth.forEach(person -> {
+				CloseContactGroup home = randomFrom(homes);
+				home.attendees.add(person);
+				person.home = home;
+			});
 		}
 
 		// Quick sanity check on household dynamics (exclude assisted living).
@@ -8113,8 +8116,8 @@ else {
 						<PointStyle>NONE</PointStyle>
 						<LineWidth>1.0</LineWidth>
 					</DatasetExpression>
-					<SamplesToKeep>1000</SamplesToKeep>
-					<TimeWindowExpression><![CDATA[60]]></TimeWindowExpression>
+					<SamplesToKeep>10000</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[120]]></TimeWindowExpression>
 					<FillAreaUnderLine>true</FillAreaUnderLine>
 					<LabelFormat>dd_MMM</LabelFormat>
     			</TimePlot>
@@ -8181,8 +8184,8 @@ else {
 						<PointStyle>NONE</PointStyle>
 						<LineWidth>1.0</LineWidth>
 					</DatasetExpression>
-					<SamplesToKeep>1000</SamplesToKeep>
-					<TimeWindowExpression><![CDATA[60]]></TimeWindowExpression>
+					<SamplesToKeep>10000</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[120]]></TimeWindowExpression>
 					<FillAreaUnderLine>true</FillAreaUnderLine>
 					<LabelFormat>dd_MMM</LabelFormat>
     			</TimePlot>
@@ -10144,7 +10147,8 @@ if (dateToTime(toDate(2020,4-1,30)) >= time()) {
 			<Name><![CDATA[UnityContainer]]></Name>
 			<Description><![CDATA[Example container for Brooks, AB. Allows that municipality and surrounding area to be quickly demonstrated.]]></Description>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
-			<Import><![CDATA[import java.nio.file.Paths;]]></Import>
+			<Import><![CDATA[import java.nio.file.Paths;
+import java.nio.file.Path;]]></Import>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1589490491798</Id>
@@ -10237,6 +10241,56 @@ if (dateToTime(toDate(2020,4-1,30)) >= time()) {
 			</ScaleRuler>
 			<CurrentLevel>1589490491808</CurrentLevel>
 			<ConnectionsId>1589490491841</ConnectionsId>
+			<Outputs>
+				<Output>
+					<Id>1590083535618</Id>
+					<Name><![CDATA[totalNumIdentifiedWithCOVID]]></Name>
+					<X>1020</X><Y>30</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Type><![CDATA[double]]></Type>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<Value Class="CodeValue">
+						<Code><![CDATA[localArea.identifiedWhenAsymptomatic
++ localArea.identifiedWhenSymptomatic
++ localArea.identifiedWhenRecovered]]></Code>
+					</Value>
+					<ComputationMoment>ON_SIMULATION_END</ComputationMoment>
+					<ComputationTimeCode Class="CodeUnitValue">
+						<Code><![CDATA[]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</ComputationTimeCode>
+					<ComputationDate>1590134400000</ComputationDate>
+				</Output>
+			</Outputs>
+			<Variables>
+				<Variable Class="Parameter">
+					<Id>1590083206703</Id>
+					<Name><![CDATA[dataPath]]></Name>
+					<X>-140</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[java.nio.file.Path]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[Paths.get(".")]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1590083206701</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
 			<Events>
 				<Event>
 					<Id>1589490491825</Id>
@@ -10321,7 +10375,7 @@ localArea.workplaces
 	.filter(w -> localArea.workplaceEmployees.get(w).size() > 10)
 	.flatMap(w -> localArea.workplaceEmployees.get(w).stream())
 	.filter(p -> p.home.attendees.size() >= 3)
-	.limit(5)
+	.limit(10)
 	.forEach(person -> {
 		send(Person.MsgForceCOVID, person);
 	});]]></Action>
@@ -10435,7 +10489,7 @@ if (dateToTime(toDate(2020,4-1,30)) >= time()) {
 						<Parameter>
 							<Name><![CDATA[dataPath]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[Paths.get("data/UnitySK")]]></Code>
+								<Code><![CDATA[dataPath]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -10577,28 +10631,85 @@ if (dateToTime(toDate(2020,4-1,30)) >= time()) {
 		</ExportSettings>
 	</Database>
 	
-	<RunConfiguration ActiveObjectClassId="1586725812335">
+	<RunConfiguration ActiveObjectClassId="1589490491803">
 		<Id>1586725782358</Id>
 		<Name><![CDATA[RunConfiguration]]></Name>
-		<MaximumMemory>8192</MaximumMemory>
+		<MaximumMemory>4096</MaximumMemory>
 		<ModelTimeProperties>
 			<StopOption><![CDATA[Stop at specified time]]></StopOption>
 			<InitialDate><![CDATA[1586649600000]]></InitialDate>	
 			<InitialTime><![CDATA[0.0]]></InitialTime>	
-			<FinalDate><![CDATA[1589241600000]]></FinalDate>	
-			<FinalTime><![CDATA[100.0]]></FinalTime>	
+			<FinalDate><![CDATA[1597017600000]]></FinalDate>	
+			<FinalTime><![CDATA[120.0]]></FinalTime>	
 		</ModelTimeProperties>
 		<AnimationProperties>
-			<StopNever>true</StopNever>
+			<StopNever>false</StopNever>
 			<ExecutionMode>realTimeScaled</ExecutionMode>
 			<RealTimeScale>1.0</RealTimeScale>
 			<EnableZoomAndPanning>true</EnableZoomAndPanning>
 			<EnableDeveloperPanel>false</EnableDeveloperPanel>
 			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 		</AnimationProperties>
-		<Inputs>		
+		<Inputs>
+    		<RunConfigurationInput>
+				<Id>1590083287364</Id>
+				<Name><![CDATA[Hierarchy]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+					<ClassName><![CDATA[hierarchy.csv]]></ClassName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1590083287365</Id>
+				<Name><![CDATA[Location attributes]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+					<ClassName><![CDATA[location_attributes.csv]]></ClassName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1590083287366</Id>
+				<Name><![CDATA[Locations]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+					<ClassName><![CDATA[locations.csv]]></ClassName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1590083287367</Id>
+				<Name><![CDATA[Poi groups]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+					<ClassName><![CDATA[poi_groups.csv]]></ClassName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1590083287368</Id>
+				<Name><![CDATA[Population attributes]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+					<ClassName><![CDATA[population_attributes.csv]]></ClassName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1590083287369</Id>
+				<Name><![CDATA[Populations]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+					<ClassName><![CDATA[populations.csv]]></ClassName>
+				</InputReference>
+    		</RunConfigurationInput>		
 		</Inputs>
 		<Outputs>
+    		<RunConfigurationOutput>
+				<Id>0</Id>
+				<Name><![CDATA[Total num identified with COVID]]></Name>
+				<OutputReference>
+					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+					<ClassName><![CDATA[UnityContainer]]></ClassName>
+					<ItemName><![CDATA[totalNumIdentifiedWithCOVID]]></ItemName>
+				</OutputReference>
+    		</RunConfigurationOutput>
 		</Outputs>
 	</RunConfiguration>
 	<Experiments>	
@@ -10679,7 +10790,7 @@ import com.luminesim.citation.ReferenceList;]]></Import>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-14774017</Color>
-					<Text><![CDATA[COVID-19 In a City Like Brooks, Alberta]]></Text>
+					<Text><![CDATA[COVID-19 In a Small City]]></Text>
 					<Font>
 						<Name>Lato</Name>
 						<Size>28</Size>
@@ -10700,28 +10811,28 @@ import com.luminesim.citation.ReferenceList;]]></Import>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[This simulation explores what might happen if a COVID-19 outbreak struck a city the size of Brooks, Alberta.
+					<Text><![CDATA[This simulation explores what might happen if a COVID-19 outbreak struck a city of 15,000 people at a major employer. 
+The simulated community's large employer then pauses operation before reopening in late May.
 
 What is This?
-This is a simulation of COVID-19 spread designed to be rapidly deployed in smaller towns, cities, and surrounding rural 
-areas that experience an outbreak. The simulation is designed to test strategies that may reduce COVID-19 spread and to 
-explore the consequences of removing existing strategies (e.g. removing social distancing, reopening schools, etc.). As 
-small centres by definition have small populations, its results can vary based on the exact community members and locations 
-that are infected. The simulation's results should therefore be used as guides only: it should not be used to predict the exact date 
-that COVID-19 will enter the population, nor exact dates on which it will leave, nor the exact damage (or lack thereof) it will cause.
+This is a simulation of COVID-19 spread designed to be rapidly deployed in smaller towns, cities, and surrounding rural areas that experience an 
+outbreak. The simulation is designed to test strategies that may reduce COVID-19 spread and to explore the consequences of removing existing strategies 
+(e.g. removing social distancing, reopening schools, etc.). As small centres by definition have small populations, its results can vary based on the exact 
+community members and locations that are infected. The simulation's results should therefore be used as guides only: it should not be used to predict the 
+exact date that COVID-19 will enter the population, nor exact dates on which it will leave, nor the exact damage (or lack thereof) it will cause. For more information, 
+visit www.luminesim.com/rcrs. To see the code and documentation, visit http://bit.ly/3dTVddU. Consider contributing to our GoFundMe at http://gf.me/u/x28ahx
 
 Key Takeaway
-This simulation helps identify strategies that a small centre could employ to reduce the human impact of COVID-19 as local 
-conditions evolve. It does not predict the timing nor the exact length of a COVID-19 outbreak. 
+This simulation helps identify strategies that a small center could employ to reduce the human impact of COVID-19 as local conditions evolve. It does 
+not predict the timing nor the exact length of a COVID-19 outbreak and must be interpreted with provincial and federal health authorities.
 
 How Does This Work?
-This is an agent based simulation. In agent based simulations, people are distinct entities (agents) who have attributes 
-and change over time. In this simulation, they have an age, a sex, a home, workplace or school, non-work places, and family 
-members. People can become infected with COVID-19 and be either asymptomatic or symptomatic. Symptomatic people 
-may be admitted to hospital and may recover or die. People also move between locations containing other people (e.g. work): 
-if infected, they can contaminate surfaces and may expose others to COVID-19 through speaking. The simulation is usually run 
-for a small number of months. In that time, interventions (e.g. social distancing) can be implemented or removed, which allows 
-other outcomes to be forecast (e.g. number of new infections).
+This is an agent based simulation. In agent based simulations, people are distinct entities (agents) who have attributes and change over time. In this 
+simulation, they have an age, a sex, a home, workplace or school, non-work places, and family members. People can become infected with COVID-19 
+and be either asymptomatic or symptomatic. Symptomatic people may be admitted to hospital and may recover or die. People also move between 
+locations containing other people (e.g. work): if infected, they can contaminate surfaces and may expose others to COVID-19 through speaking. The 
+simulation is usually run for a small number of months. In that time, interventions (e.g. social distancing) can be implemented or removed, which allows 
+other outcomes to be forecast (e.g. number of new infections). The simulation must be run multiple times for meaningful conclusions to be drawn.
 
 What Does the Simulation Include?
 The simulation includes these critical mechanics:
@@ -10729,12 +10840,12 @@ The simulation includes these critical mechanics:
 - People talk with others at those places. Infection can be spread by talking.
 - People touch surfaces at those places. Infection can be spread if surfaces are contaminated.
 - Interventions, like wearing masks, sanitizing surfaces, and social distancing, can reduce the likelihood of infection.
+- People follow *exactly* the behaviour indicated by interventions: if social distancing ends during an outbreak, people do not resume it until told otherwise
+- People can be susceptible to COVID-19, asymptomatic, symptomatic, recovered, hospitalized, or dead.
 
 Improvements & Contributions
-We welcome new data, bug reports, corrections, and suggestions for improvement. Please visit www.luminesim.com/rcrs to contribute
-and to read the simulation's full documentation.
-
-
+We welcome new data, bug reports, corrections, and suggestions for improvement. Please visit www.luminesim.com/rcrs to learn more and contribute.
+The codebase can be viewed on GitHub at http://bit.ly/3dTVddU . Consider contributing to our GoFundMe at http://gf.me/u/x28ahx
 
 Important:
 By using this simulation you understand and acknowledge that no simulation is a perfect representation of the real world. Local conditions, 
@@ -10789,7 +10900,7 @@ organizations. Under no circumstances should you change local COVID-19 strategie
 					<Text><![CDATA[Regional COVID-19 Response Simulation
 Master repository developed and maintained
 by Luminesim Simulation and Analytics
-www.luminesim.com]]></Text>
+www.luminesim.com/rcrs]]></Text>
 					<Font>
 						<Name>Lato</Name>
 						<Size>12</Size>
@@ -10835,8 +10946,8 @@ www.luminesim.com]]></Text>
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1586908800000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1592092800000]]></FinalDate>	
-				<FinalTime><![CDATA[60.0]]></FinalTime>	
+				<FinalDate><![CDATA[1597276800000]]></FinalDate>	
+				<FinalTime><![CDATA[120.0]]></FinalTime>	
 			</ModelTimeProperties>
 		</SimulationExperiment>
 		<!--   =========   Simulation Experiment   ========  -->
@@ -10850,8 +10961,8 @@ import com.luminesim.citation.ReferenceList;]]></Import>
 			<MaximumMemory>4096</MaximumMemory>
 			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
-			<BeforeSimulationRunCode><![CDATA[root.localArea.statistics.openLogFile(Paths.get("log.csv"));]]></BeforeSimulationRunCode>
-			<AfterSimulationRunCode><![CDATA[root.localArea.statistics.closeLogFile();]]></AfterSimulationRunCode>
+			<BeforeSimulationRunCode><![CDATA[//root.localArea.statistics.openLogFile(Paths.get("log.csv"));]]></BeforeSimulationRunCode>
+			<AfterSimulationRunCode><![CDATA[//root.localArea.statistics.closeLogFile();]]></AfterSimulationRunCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
 			<VmArgs><![CDATA[]]></VmArgs>
@@ -10859,7 +10970,7 @@ import com.luminesim.citation.ReferenceList;]]></Import>
 
 			<Presentation>
 				<Image>
-					<Id>1589490440587</Id>
+					<Id>1590081957324</Id>
 					<Name><![CDATA[image]]></Name>
 					<X>0</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
@@ -10882,7 +10993,7 @@ import com.luminesim.citation.ReferenceList;]]></Import>
 					<OriginalSize>false</OriginalSize>
 				</Image>
 				<Rectangle>
-					<Id>1589490440589</Id>
+					<Id>1590081957353</Id>
 					<Name><![CDATA[rectangle]]></Name>
 					<X>10</X><Y>500</Y>
 					<Label><X>10</X><Y>10</Y></Label>
@@ -10904,7 +11015,7 @@ import com.luminesim.citation.ReferenceList;]]></Import>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
 				<Text>
-					<Id>1589490440591</Id>
+					<Id>1590081957355</Id>
 					<Name><![CDATA[text]]></Name>
 					<X>20</X><Y>20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -10916,7 +11027,7 @@ import com.luminesim.citation.ReferenceList;]]></Import>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-14774017</Color>
-					<Text><![CDATA[COVID-19 In a Town Like Unity, Saskatchewan]]></Text>
+					<Text><![CDATA[COVID-19 In a Small Town]]></Text>
 					<Font>
 						<Name>Lato</Name>
 						<Size>28</Size>
@@ -10925,7 +11036,7 @@ import com.luminesim.citation.ReferenceList;]]></Import>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1589490440593</Id>
+					<Id>1590081957357</Id>
 					<Name><![CDATA[text1]]></Name>
 					<X>20</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -10937,28 +11048,28 @@ import com.luminesim.citation.ReferenceList;]]></Import>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[This simulation explores what might happen if a COVID-19 outbreak struck a city the size of Unity, Saskatchewan
+					<Text><![CDATA[.This simulation explores what might happen if a COVID-19 outbreak struck a town of 2500 people and nearby rural municipality. 
+The outbreak happens simultaneously at several large employers in the region. A burst of random community testing occurs in late April
 
 What is This?
-This is a simulation of COVID-19 spread designed to be rapidly deployed in smaller towns, cities, and surrounding rural 
-areas that experience an outbreak. The simulation is designed to test strategies that may reduce COVID-19 spread and to 
-explore the consequences of removing existing strategies (e.g. removing social distancing, reopening schools, etc.). As 
-small centres by definition have small populations, its results can vary based on the exact community members and locations 
-that are infected. The simulation's results should therefore be used as guides only: it should not be used to predict the exact date 
-that COVID-19 will enter the population, nor exact dates on which it will leave, nor the exact damage (or lack thereof) it will cause.
+This is a simulation of COVID-19 spread designed to be rapidly deployed in smaller towns, cities, and surrounding rural areas that experience an 
+outbreak. The simulation is designed to test strategies that may reduce COVID-19 spread and to explore the consequences of removing existing strategies 
+(e.g. removing social distancing, reopening schools, etc.). As small centres by definition have small populations, its results can vary based on the exact 
+community members and locations that are infected. The simulation's results should therefore be used as guides only: it should not be used to predict the 
+exact date that COVID-19 will enter the population, nor exact dates on which it will leave, nor the exact damage (or lack thereof) it will cause. For more information, 
+visit www.luminesim.com/rcrs. To see the code and documentation, visit http://bit.ly/3dTVddU. Consider contributing to our GoFundMe at http://gf.me/u/x28ahx
 
 Key Takeaway
-This simulation helps identify strategies that a small centre could employ to reduce the human impact of COVID-19 as local 
-conditions evolve. It does not predict the timing nor the exact length of a COVID-19 outbreak. 
+This simulation helps identify strategies that a small center could employ to reduce the human impact of COVID-19 as local conditions evolve. It does 
+not predict the timing nor the exact length of a COVID-19 outbreak and must be interpreted with provincial and federal health authorities.
 
 How Does This Work?
-This is an agent based simulation. In agent based simulations, people are distinct entities (agents) who have attributes 
-and change over time. In this simulation, they have an age, a sex, a home, workplace or school, non-work places, and family 
-members. People can become infected with COVID-19 and be either asymptomatic or symptomatic. Symptomatic people 
-may be admitted to hospital and may recover or die. People also move between locations containing other people (e.g. work): 
-if infected, they can contaminate surfaces and may expose others to COVID-19 through speaking. The simulation is usually run 
-for a small number of months. In that time, interventions (e.g. social distancing) can be implemented or removed, which allows 
-other outcomes to be forecast (e.g. number of new infections).
+This is an agent based simulation. In agent based simulations, people are distinct entities (agents) who have attributes and change over time. In this 
+simulation, they have an age, a sex, a home, workplace or school, non-work places, and family members. People can become infected with COVID-19 
+and be either asymptomatic or symptomatic. Symptomatic people may be admitted to hospital and may recover or die. People also move between 
+locations containing other people (e.g. work): if infected, they can contaminate surfaces and may expose others to COVID-19 through speaking. The 
+simulation is usually run for a small number of months. In that time, interventions (e.g. social distancing) can be implemented or removed, which allows 
+other outcomes to be forecast (e.g. number of new infections). The simulation must be run multiple times for meaningful conclusions to be drawn.
 
 What Does the Simulation Include?
 The simulation includes these critical mechanics:
@@ -10966,12 +11077,12 @@ The simulation includes these critical mechanics:
 - People talk with others at those places. Infection can be spread by talking.
 - People touch surfaces at those places. Infection can be spread if surfaces are contaminated.
 - Interventions, like wearing masks, sanitizing surfaces, and social distancing, can reduce the likelihood of infection.
+- People follow *exactly* the behaviour indicated by interventions: if social distancing ends during an outbreak, people do not resume it until told otherwise
+- People can be susceptible to COVID-19, asymptomatic, symptomatic, recovered, hospitalized, or dead.
 
 Improvements & Contributions
-We welcome new data, bug reports, corrections, and suggestions for improvement. Please visit www.luminesim.com/rcrs to contribute
-and to read the simulation's full documentation.
-
-
+We welcome new data, bug reports, corrections, and suggestions for improvement. Please visit www.luminesim.com/rcrs to learn more and contribute.
+The codebase can be viewed on GitHub at http://bit.ly/3dTVddU . Consider contributing to our GoFundMe at http://gf.me/u/x28ahx
 
 Important:
 By using this simulation you understand and acknowledge that no simulation is a perfect representation of the real world. Local conditions, 
@@ -10986,6 +11097,52 @@ organizations. Under no circumstances should you change local COVID-19 strategie
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<Text>
+					<Id>1590081957379</Id>
+					<Name><![CDATA[text2]]></Name>
+					<X>878</X><Y>70</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-14774017</Color>
+					<Text><![CDATA[Regional COVID-19 Response Simulation
+Master repository developed and maintained
+by Luminesim Simulation and Analytics
+www.luminesim.com/rcrs]]></Text>
+					<Font>
+						<Name>Lato</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Image>
+					<Id>1590081957381</Id>
+					<Name><![CDATA[image1]]></Name>
+					<X>790</X><Y>10</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>176.43</Width>
+					<Height>60</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+							<ClassName><![CDATA[LUMINESIM-Logo.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
 				<Control Type="Button">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1589490440595</Id>
@@ -11010,70 +11167,27 @@ organizations. Under no circumstances should you change local COVID-19 strategie
 						<LabelText><![CDATA[I understand. Run the Simulation]]></LabelText>
 					</ExtendedProperties>
 				</Control>
-				<Text>
-					<Id>1589490440597</Id>
-					<Name><![CDATA[text2]]></Name>
-					<X>878</X><Y>70</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-14774017</Color>
-					<Text><![CDATA[Regional COVID-19 Response Simulation
-Master repository developed and maintained
-by Luminesim Simulation and Analytics
-www.luminesim.com]]></Text>
-					<Font>
-						<Name>Lato</Name>
-						<Size>12</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
-				</Text>
-				<Image>
-					<Id>1589490440599</Id>
-					<Name><![CDATA[image1]]></Name>
-					<X>790</X><Y>10</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Width>176.43</Width>
-					<Height>60</Height>
-					<Rotation>0.0</Rotation>
-					<ImageFiles>
-						<ImageResourceReference>
-							<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
-							<ClassName><![CDATA[LUMINESIM-Logo.png]]></ClassName>
-						</ImageResourceReference>
-					</ImageFiles>
-					<OriginalSize>false</OriginalSize>
-				</Image>
 			</Presentation>
 
 			<Parameters>			
+				<Parameter>
+					<ParameterName><![CDATA[dataPath]]></ParameterName>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>false</EnableZoomAndPanning>
-				<ExecutionMode><![CDATA[virtualTime]]></ExecutionMode>
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
 				<Title><![CDATA[Regional COVID-19 Response Simulation]]></Title>	
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
-				<RealTimeScale>0.2</RealTimeScale>
+				<RealTimeScale>1.0</RealTimeScale>
 			</PresentationProperties>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1586908800000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1592092800000]]></FinalDate>	
-				<FinalTime><![CDATA[60.0]]></FinalTime>	
+				<FinalDate><![CDATA[1597276800000]]></FinalDate>	
+				<FinalTime><![CDATA[120.0]]></FinalTime>	
 			</ModelTimeProperties>
 		</SimulationExperiment>
 		<!--   =========  Parameter Variation Experiment   ========  -->
@@ -12655,6 +12769,34 @@ public interface EventTracker
 		<Resource>
 			<Path><![CDATA[outputs]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[poi_groups.csv]]></Path>
+			<ReferencedFromUserCode>true</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[population_attributes.csv]]></Path>
+			<ReferencedFromUserCode>true</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[populations.csv]]></Path>
+			<ReferencedFromUserCode>true</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[areas.csv]]></Path>
+			<ReferencedFromUserCode>true</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[hierarchy.csv]]></Path>
+			<ReferencedFromUserCode>true</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[location_attributes.csv]]></Path>
+			<ReferencedFromUserCode>true</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[locations.csv]]></Path>
+			<ReferencedFromUserCode>true</ReferencedFromUserCode>
 		</Resource>
 	</ModelResources>
 	<ClassPathEntry>
