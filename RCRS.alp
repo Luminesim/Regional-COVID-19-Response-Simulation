@@ -603,6 +603,32 @@ marker.jumpTo(getLatitude(), getLongitude());]]></EntryAction>
 						<ClassName><![CDATA[UnityContainer]]></ClassName>
 					</ActiveObjectClass>
 				</ContainerLink>
+				<ContainerLink>
+					<Id>1590343908315</Id>
+					<Name><![CDATA[cloudTopLevel]]></Name>
+					<X>450</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[CloudTopLevel]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1590599350556</Id>
+					<Name><![CDATA[unityContainerBlank]]></Name>
+					<X>550</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[UnityContainerBlank]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
 			</ContainerLinks>
 
 			<Presentation>
@@ -894,6 +920,34 @@ import com.luminesim.citation.ReferenceList;]]></Import>
 					<ActiveObjectClass>
 						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
 						<ClassName><![CDATA[UnityContainer]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1590343908329</Id>
+					<Name><![CDATA[cloudTopLevel]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>450</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[CloudTopLevel]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1590599350568</Id>
+					<Name><![CDATA[unityContainerBlank]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>550</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[UnityContainerBlank]]></ClassName>
 					</ActiveObjectClass>
 				</ContainerLink>
 			</ContainerLinks>
@@ -1685,7 +1739,7 @@ references.useRevisable(0.90, references.placeholder("P(Stay home if sick until 
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[boolean]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[true]]></Code>
+							<Code><![CDATA[false]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -3585,6 +3639,32 @@ return limitMin(1 * hour(), sleepHour - (time(HOUR) - (int)time(HOUR)));]]></Bod
 						<ClassName><![CDATA[UnityContainer]]></ClassName>
 					</ActiveObjectClass>
 				</ContainerLink>
+				<ContainerLink>
+					<Id>1590343908345</Id>
+					<Name><![CDATA[cloudTopLevel]]></Name>
+					<X>450</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[CloudTopLevel]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1590599350580</Id>
+					<Name><![CDATA[unityContainerBlank]]></Name>
+					<X>550</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[UnityContainerBlank]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
 			</ContainerLinks>
 
 			<Presentation>
@@ -4482,6 +4562,30 @@ catch (Throwable t) {
 	throw new Error(t);
 }]]></Body>
 				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1590601811952</Id>
+					<Name><![CDATA[getCumulativeInfections]]></Name>
+					<X>700</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return sum(infectionsBySource.values(), x -> x);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1590864559669</Id>
+					<Name><![CDATA[getCumulativeSymptomaticInfections]]></Name>
+					<X>700</X><Y>600</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return sum(symptomaticCases.values(), x -> x);]]></Body>
+				</Function>
 			</Functions>
 			<AgentLinks>
 				<AgentLink>
@@ -4556,6 +4660,32 @@ catch (Throwable t) {
 					<ActiveObjectClass>
 						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
 						<ClassName><![CDATA[UnityContainer]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1590343908367</Id>
+					<Name><![CDATA[cloudTopLevel]]></Name>
+					<X>450</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[CloudTopLevel]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1590599350591</Id>
+					<Name><![CDATA[unityContainerBlank]]></Name>
+					<X>550</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[UnityContainerBlank]]></ClassName>
 					</ActiveObjectClass>
 				</ContainerLink>
 			</ContainerLinks>
@@ -5796,6 +5926,24 @@ referenceList = null;]]></DestroyCode>
 					</Properties>
 
 				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1590600704220</Id>
+					<Name><![CDATA[allInterventionToggles]]></Name>
+					<X>180</X><Y>-50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[ShapeCheckBox]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+						<CollectionInitializer Class="CodeValue">
+							<Code><![CDATA[{chkInterventionSocialDistancing, chkInterventionStayHome, chkInterventionStopSchool, chkInterventionWidespreadMasks, chkInterventionBusinessesDecontaminate, chkInterventionHandwashing, chkInterventionNonEssentialWork, chkInterventionReduceGoingOut, chkInterventionHospitalEquipment}]]></Code>
+						</CollectionInitializer>
+					</Properties>
+
+				</Variable>
 			</Variables>
 			<Events>
 				<Event>
@@ -5974,7 +6122,7 @@ people
 		
 		// No options? pick the closest one.
 		if (options.isEmpty()) {
-			options = List.of(getNearestAgent(goingOutOptions));
+			options = Arrays.asList(getNearestAgent(goingOutOptions));
 		}
 	
 		// Build up the weighted choice list.
@@ -5993,7 +6141,7 @@ people
 	.forEach(person -> 
 		person.nonWorkPlaces = new WeightedChoice<>(
 			getEngine().getDefaultRandomGenerator(), 
-			Set.of(person.home),
+			new HashSet<>(Arrays.asList(person.home)),
 			x -> 1d
 		)
 	);
@@ -6457,8 +6605,8 @@ forEachLocation(
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[Set<POIType> workplaceTypes = Set.of(Workplace, PrimarySchool, SecondarySchool, AssistedLiving, Hospital);
-Set<POIType> schoolTypes = Set.of(PrimarySchool, SecondarySchool);
+					<Body><![CDATA[Set<POIType> workplaceTypes = new HashSet<>(Arrays.asList(Workplace, PrimarySchool, SecondarySchool, AssistedLiving, Hospital));
+Set<POIType> schoolTypes = new HashSet<>(Arrays.asList(PrimarySchool, SecondarySchool));
 
 
 // Find any POI groups and build them.
@@ -6771,6 +6919,32 @@ return referenceList;]]></Body>
 					<ActiveObjectClass>
 						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
 						<ClassName><![CDATA[UnityContainer]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1590343908336</Id>
+					<Name><![CDATA[cloudTopLevel]]></Name>
+					<X>350</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[CloudTopLevel]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1590599350574</Id>
+					<Name><![CDATA[unityContainerBlank]]></Name>
+					<X>450</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[UnityContainerBlank]]></ClassName>
 					</ActiveObjectClass>
 				</ContainerLink>
 			</ContainerLinks>
@@ -8517,6 +8691,32 @@ www.luminesim.com]]></Text>
 						<ClassName><![CDATA[UnityContainer]]></ClassName>
 					</ActiveObjectClass>
 				</ContainerLink>
+				<ContainerLink>
+					<Id>1590343908357</Id>
+					<Name><![CDATA[cloudTopLevel]]></Name>
+					<X>450</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[CloudTopLevel]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1590599350586</Id>
+					<Name><![CDATA[unityContainerBlank]]></Name>
+					<X>550</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[UnityContainerBlank]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
 			</ContainerLinks>
 
 			<Presentation>
@@ -8806,6 +9006,32 @@ www.luminesim.com]]></Text>
 					<ActiveObjectClass>
 						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
 						<ClassName><![CDATA[UnityContainer]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1590343908320</Id>
+					<Name><![CDATA[cloudTopLevel]]></Name>
+					<X>450</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[CloudTopLevel]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+				<ContainerLink>
+					<Id>1590599350562</Id>
+					<Name><![CDATA[unityContainerBlank]]></Name>
+					<X>550</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[UnityContainerBlank]]></ClassName>
 					</ActiveObjectClass>
 				</ContainerLink>
 			</ContainerLinks>
@@ -10265,35 +10491,9 @@ import java.nio.file.Path;]]></Import>
 					<ComputationDate>1590134400000</ComputationDate>
 				</Output>
 			</Outputs>
-			<Variables>
-				<Variable Class="Parameter">
-					<Id>1590083206703</Id>
-					<Name><![CDATA[dataPath]]></Name>
-					<X>-140</X><Y>110</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[java.nio.file.Path]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[Paths.get(".")]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1590083206701</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-			</Variables>
 			<Events>
 				<Event>
-					<Id>1589490491825</Id>
+					<Id>1590599434977</Id>
 					<Name><![CDATA[provincialInterventions]]></Name>
 					<X>560</X><Y>500</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -10327,7 +10527,7 @@ localArea.map.setCenterLatitude(52.461978);
 localArea.map.setCenterLongitude(-109.175676);
 
 // Setup interventions.
-List.of(
+Arrays.asList(
 	localArea.chkInterventionHandwashing, 
 	localArea.chkInterventionNonEssentialWork, 
 	localArea.chkInterventionSocialDistancing, 
@@ -10339,7 +10539,7 @@ List.of(
 ).forEach(intervention -> intervention.setSelected(true, true));]]></Action>
 				</Event>
 				<Event>
-					<Id>1589490491834</Id>
+					<Id>1590599434987</Id>
 					<Name><![CDATA[initialOutbreaksAtBusinesses]]></Name>
 					<Description><![CDATA[Infects people.]]></Description>
 					<X>560</X><Y>520</Y>
@@ -10381,7 +10581,7 @@ localArea.workplaces
 	});]]></Action>
 				</Event>
 				<Event>
-					<Id>1589490491837</Id>
+					<Id>1590599434993</Id>
 					<Name><![CDATA[testingBurst]]></Name>
 					<X>560</X><Y>540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -10464,6 +10664,21 @@ if (dateToTime(toDate(2020,4-1,30)) >= time()) {
 				</AgentLink>
 			</AgentLinks>
 
+			<ContainerLinks>
+				<ContainerLink>
+					<Id>1590343908304</Id>
+					<Name><![CDATA[cloudTopLevel]]></Name>
+					<X>50</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[CloudTopLevel]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+			</ContainerLinks>
 			<EmbeddedObjects>
 				<EmbeddedObject>
 					<Id>1589490491822</Id>
@@ -10489,7 +10704,7 @@ if (dateToTime(toDate(2020,4-1,30)) >= time()) {
 						<Parameter>
 							<Name><![CDATA[dataPath]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[dataPath]]></Code>
+								<Code><![CDATA[Paths.get(".")]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -10609,6 +10824,880 @@ if (dateToTime(toDate(2020,4-1,30)) >= time()) {
 			</Areas>
 
 		</ActiveObjectClass>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1590343800163</Id>
+			<Name><![CDATA[CloudTopLevel]]></Name>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1590343800161</Id>
+				<Name><![CDATA[1590343800161]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+	 			<SpaceType>CONTINUOUS</SpaceType>			
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1590393600000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1590343800159</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1590343800162</CurrentLevel>
+			<ConnectionsId>1590343800158</ConnectionsId>
+			<Events>
+				<Event>
+					<Id>1590346093480</Id>
+					<Name><![CDATA[goToModel]]></Name>
+					<X>1010</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="occuresOnce">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1590393600000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[unityContainer.viewDashboard.navigateTo();]]></Action>
+				</Event>
+			</Events>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1590343800158</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<EmbeddedObjects>
+				<EmbeddedObject>
+					<Id>1590343902290</Id>
+					<Name><![CDATA[unityContainer]]></Name>
+					<X>-60</X><Y>190</Y>
+					<Label><X>-60</X><Y>-30</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[UnityContainer]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+							<ClassName><![CDATA[UnityContainer]]></ClassName>
+							<ItemName><![CDATA[1589490491798]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InEnvironment>true</InEnvironment>	
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+			</EmbeddedObjects>
+
+			<Presentation>
+				<Level>
+					<Id>1590343800162</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
+			<Presentation>
+				<Image>
+					<Id>1590345059916</Id>
+					<Name><![CDATA[image]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>1000</Width>
+					<Height>600</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+							<ClassName><![CDATA[LUMINESIM-Backdrop.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
+				<Rectangle>
+					<Id>1590345060004</Id>
+					<Name><![CDATA[rectangle]]></Name>
+					<X>10</X><Y>500</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>980</Width>
+					<Height>95</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1590345060010</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>20</X><Y>20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-14774017</Color>
+					<Text><![CDATA[COVID-19 In a Small Town]]></Text>
+					<Font>
+						<Name>Lato</Name>
+						<Size>28</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1590345060024</Id>
+					<Name><![CDATA[text1]]></Name>
+					<X>20</X><Y>60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[.This simulation explores what might happen if a COVID-19 outbreak struck a town of 2500 people and nearby rural municipality. 
+The outbreak happens simultaneously at several large employers in the region. A burst of random community testing occurs in late April
+
+What is This?
+This is a simulation of COVID-19 spread designed to be rapidly deployed in smaller towns, cities, and surrounding rural areas that experience an 
+outbreak. The simulation is designed to test strategies that may reduce COVID-19 spread and to explore the consequences of removing existing strategies 
+(e.g. removing social distancing, reopening schools, etc.). As small centres by definition have small populations, its results can vary based on the exact 
+community members and locations that are infected. The simulation's results should therefore be used as guides only: it should not be used to predict the 
+exact date that COVID-19 will enter the population, nor exact dates on which it will leave, nor the exact damage (or lack thereof) it will cause. For more information, 
+visit www.luminesim.com/rcrs. To see the code and documentation, visit http://bit.ly/3dTVddU. Consider contributing to our GoFundMe at http://gf.me/u/x28ahx
+
+Key Takeaway
+This simulation helps identify strategies that a small center could employ to reduce the human impact of COVID-19 as local conditions evolve. It does 
+not predict the timing nor the exact length of a COVID-19 outbreak and must be interpreted with provincial and federal health authorities.
+
+How Does This Work?
+This is an agent based simulation. In agent based simulations, people are distinct entities (agents) who have attributes and change over time. In this 
+simulation, they have an age, a sex, a home, workplace or school, non-work places, and family members. People can become infected with COVID-19 
+and be either asymptomatic or symptomatic. Symptomatic people may be admitted to hospital and may recover or die. People also move between 
+locations containing other people (e.g. work): if infected, they can contaminate surfaces and may expose others to COVID-19 through speaking. The 
+simulation is usually run for a small number of months. In that time, interventions (e.g. social distancing) can be implemented or removed, which allows 
+other outcomes to be forecast (e.g. number of new infections). The simulation must be run multiple times for meaningful conclusions to be drawn.
+
+What Does the Simulation Include?
+The simulation includes these critical mechanics:
+- People go to daytime activities (e.g. school, work, weekend activity), evening activities (e.g. shops), and then home. 
+- People talk with others at those places. Infection can be spread by talking.
+- People touch surfaces at those places. Infection can be spread if surfaces are contaminated.
+- Interventions, like wearing masks, sanitizing surfaces, and social distancing, can reduce the likelihood of infection.
+- People follow *exactly* the behaviour indicated by interventions: if social distancing ends during an outbreak, people do not resume it until told otherwise
+- People can be susceptible to COVID-19, asymptomatic, symptomatic, recovered, hospitalized, or dead.
+
+Improvements & Contributions
+We welcome new data, bug reports, corrections, and suggestions for improvement. Please visit www.luminesim.com/rcrs to learn more and contribute.
+The codebase can be viewed on GitHub at http://bit.ly/3dTVddU . Consider contributing to our GoFundMe at http://gf.me/u/x28ahx
+
+Important:
+By using this simulation you understand and acknowledge that no simulation is a perfect representation of the real world. Local conditions, 
+nuances, and phenomena not captured in the simulation mean the tool may deviate from real-world outcomes. This tool is therefore for 
+your information only and should be interpreted using the documentation at www.luminesim.com/rcrs. The simulation's results should only be 
+used after planning for local conditions, consulting local authorities and stakeholders, and gaining the consent of local residents and 
+organizations. Under no circumstances should you change local COVID-19 strategies without first consulting provincial medical authorities.]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1590345060163</Id>
+					<Name><![CDATA[text2]]></Name>
+					<X>878</X><Y>70</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-14774017</Color>
+					<Text><![CDATA[Regional COVID-19 Response Simulation
+Master repository developed and maintained
+by Luminesim Simulation and Analytics
+www.luminesim.com/rcrs]]></Text>
+					<Font>
+						<Name>Lato</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Image>
+					<Id>1590345060178</Id>
+					<Name><![CDATA[image1]]></Name>
+					<X>790</X><Y>10</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>176.43</Width>
+					<Height>60</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+							<ClassName><![CDATA[LUMINESIM-Logo.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
+			</Presentation>
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1590599350519</Id>
+			<Name><![CDATA[UnityContainerBlank]]></Name>
+			<Description><![CDATA[Example container for Brooks, AB. Allows that municipality and surrounding area to be quickly demonstrated.]]></Description>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<Import><![CDATA[import java.nio.file.Paths;
+import java.nio.file.Path;
+import java.util.function.Consumer;]]></Import>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1590599350514</Id>
+				<Name><![CDATA[1590599350514]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+	 			<SpaceType>CONTINUOUS</SpaceType>			
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1589529600000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1590599350515</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1590599350521</CurrentLevel>
+			<ConnectionsId>1590599350542</ConnectionsId>
+			<Outputs>
+				<Output>
+					<Id>1590599350544</Id>
+					<Name><![CDATA[totalNumIdentifiedWithCOVID]]></Name>
+					<X>1020</X><Y>30</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Type><![CDATA[double]]></Type>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<Value Class="CodeValue">
+						<Code><![CDATA[localArea.identifiedWhenAsymptomatic
++ localArea.identifiedWhenSymptomatic
++ localArea.identifiedWhenRecovered]]></Code>
+					</Value>
+					<ComputationMoment>ON_SIMULATION_END</ComputationMoment>
+					<ComputationTimeCode Class="CodeUnitValue">
+						<Code><![CDATA[]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</ComputationTimeCode>
+					<ComputationDate>1590134400000</ComputationDate>
+				</Output>
+			</Outputs>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1590601383546</Id>
+					<Name><![CDATA[label]]></Name>
+					<X>560</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[String]]></Type>        
+					</Properties>
+				</Variable>
+			</Variables>
+			<DynamicEvents>
+				<DynamicEventClass>
+					<Id>1590599458789</Id>
+					<Name><![CDATA[Action]]></Name>
+					<Description><![CDATA[An action to perform at a specified time.]]></Description>
+					<X>560</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[action]]></Name>
+						<Type><![CDATA[Consumer<LocalArea>]]></Type>
+					</Parameter>
+					<Action><![CDATA[action.accept(localArea);]]></Action>
+				</DynamicEventClass>
+			</DynamicEvents>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1590599350542</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<EmbeddedObjects>
+				<EmbeddedObject>
+					<Id>1590599350529</Id>
+					<Name><![CDATA[localArea]]></Name>
+					<X>-160</X><Y>90</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+						<ClassName><![CDATA[LocalArea]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+							<ClassName><![CDATA[LocalArea]]></ClassName>
+							<ItemName><![CDATA[1586725812330]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[dataPath]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Paths.get(".")]]></Code>
+							</Value>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InEnvironment>true</InEnvironment>	
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+			</EmbeddedObjects>
+
+			<Presentation>
+				<Level>
+					<Id>1590599350521</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
+			<Presentation>
+				<Text>
+					<Id>1590599350523</Id>
+					<Name><![CDATA[text7]]></Name>
+					<X>550</X><Y>470</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-14774017</Color>
+					<Text><![CDATA[Key Events:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+				</Level>
+			</Presentation>
+			<Areas>
+				<Area>
+					<Id>1590599350540</Id>
+					<Name><![CDATA[viewDashboard]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Title><![CDATA[Dashboard]]></Title>
+					<Width>1000</Width>
+					<Height>600</Height>
+				</Area>
+			</Areas>
+
+		</ActiveObjectClass>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1590599969801</Id>
+			<Name><![CDATA[Test]]></Name>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1590599969799</Id>
+				<Name><![CDATA[1590599969799]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+	 			<SpaceType>CONTINUOUS</SpaceType>			
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1590652800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1590599969797</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1590599969800</CurrentLevel>
+			<ConnectionsId>1590599969796</ConnectionsId>
+			<Variables>
+				<Variable Class="Parameter">
+					<Id>1590599991310</Id>
+					<Name><![CDATA[parameter]]></Name>
+					<X>30</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1590599991308</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1590599969796</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+
+			<Presentation>
+				<Level>
+					<Id>1590599969800</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
 	</ActiveObjectClasses>	
 	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
 	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
@@ -10631,85 +11720,28 @@ if (dateToTime(toDate(2020,4-1,30)) >= time()) {
 		</ExportSettings>
 	</Database>
 	
-	<RunConfiguration ActiveObjectClassId="1589490491803">
-		<Id>1586725782358</Id>
+	<RunConfiguration ActiveObjectClassId="1590343800163">
+		<Id>1590343130699</Id>
 		<Name><![CDATA[RunConfiguration]]></Name>
 		<MaximumMemory>4096</MaximumMemory>
 		<ModelTimeProperties>
 			<StopOption><![CDATA[Stop at specified time]]></StopOption>
-			<InitialDate><![CDATA[1586649600000]]></InitialDate>	
+			<InitialDate><![CDATA[1586908800000]]></InitialDate>	
 			<InitialTime><![CDATA[0.0]]></InitialTime>	
-			<FinalDate><![CDATA[1597017600000]]></FinalDate>	
+			<FinalDate><![CDATA[1597276800000]]></FinalDate>	
 			<FinalTime><![CDATA[120.0]]></FinalTime>	
 		</ModelTimeProperties>
 		<AnimationProperties>
 			<StopNever>false</StopNever>
 			<ExecutionMode>realTimeScaled</ExecutionMode>
 			<RealTimeScale>1.0</RealTimeScale>
-			<EnableZoomAndPanning>true</EnableZoomAndPanning>
+			<EnableZoomAndPanning>false</EnableZoomAndPanning>
 			<EnableDeveloperPanel>false</EnableDeveloperPanel>
 			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 		</AnimationProperties>
-		<Inputs>
-    		<RunConfigurationInput>
-				<Id>1590083287364</Id>
-				<Name><![CDATA[Hierarchy]]></Name>
-				<InputReference>
-					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
-					<ClassName><![CDATA[hierarchy.csv]]></ClassName>
-				</InputReference>
-    		</RunConfigurationInput>
-    		<RunConfigurationInput>
-				<Id>1590083287365</Id>
-				<Name><![CDATA[Location attributes]]></Name>
-				<InputReference>
-					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
-					<ClassName><![CDATA[location_attributes.csv]]></ClassName>
-				</InputReference>
-    		</RunConfigurationInput>
-    		<RunConfigurationInput>
-				<Id>1590083287366</Id>
-				<Name><![CDATA[Locations]]></Name>
-				<InputReference>
-					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
-					<ClassName><![CDATA[locations.csv]]></ClassName>
-				</InputReference>
-    		</RunConfigurationInput>
-    		<RunConfigurationInput>
-				<Id>1590083287367</Id>
-				<Name><![CDATA[Poi groups]]></Name>
-				<InputReference>
-					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
-					<ClassName><![CDATA[poi_groups.csv]]></ClassName>
-				</InputReference>
-    		</RunConfigurationInput>
-    		<RunConfigurationInput>
-				<Id>1590083287368</Id>
-				<Name><![CDATA[Population attributes]]></Name>
-				<InputReference>
-					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
-					<ClassName><![CDATA[population_attributes.csv]]></ClassName>
-				</InputReference>
-    		</RunConfigurationInput>
-    		<RunConfigurationInput>
-				<Id>1590083287369</Id>
-				<Name><![CDATA[Populations]]></Name>
-				<InputReference>
-					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
-					<ClassName><![CDATA[populations.csv]]></ClassName>
-				</InputReference>
-    		</RunConfigurationInput>		
+		<Inputs>		
 		</Inputs>
 		<Outputs>
-    		<RunConfigurationOutput>
-				<Id>0</Id>
-				<Name><![CDATA[Total num identified with COVID]]></Name>
-				<OutputReference>
-					<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
-					<ClassName><![CDATA[UnityContainer]]></ClassName>
-					<ItemName><![CDATA[totalNumIdentifiedWithCOVID]]></ItemName>
-				</OutputReference>
-    		</RunConfigurationOutput>
 		</Outputs>
 	</RunConfiguration>
 	<Experiments>	
@@ -11170,9 +12202,6 @@ www.luminesim.com/rcrs]]></Text>
 			</Presentation>
 
 			<Parameters>			
-				<Parameter>
-					<ParameterName><![CDATA[dataPath]]></ParameterName>
-				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>false</EnableZoomAndPanning>
@@ -12609,6 +13638,531 @@ Under no circumstances should you change local COVID-19 strategies without first
 				<ErrorPercent>0.5</ErrorPercent>
 				<ExpressionForConfidenceComputation><![CDATA[0]]></ExpressionForConfidenceComputation>
 			</ReplicationsProperties>
+		</ParamVariationExperiment>
+		<!--   =========  Parameter Variation Experiment   ========  -->
+		<ParamVariationExperiment ActiveObjectClassId="1590599350519">
+			<Id>1590599554433</Id>
+			<Name><![CDATA[EvaluateInterventions]]></Name>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<Import><![CDATA[import com.anylogic.engine.analysis.Chart.PointStyle;
+import java.nio.file.Paths;
+import java.util.function.Consumer;
+import static com.luminesim.anylogic.Exoskeleton.*;
+import com.luminesim.anylogic.AsyncLogger;
+]]></Import>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>12000</MaximumMemory>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<BeforeSimulationRunCode><![CDATA[// Set provincial interventions in place at the start.
+root.create_Action(1 * second(), this::initialProvincialInterventions);
+
+// Set the time at which an infection occurs.
+root.create_Action(1 * minute(), this::initialOutbreak);
+
+// Pick the right intervention.
+double idate = 1 * hour();
+switch (getCurrentIteration()) {
+
+	case 1: 
+		root.label = "Current Interventions Continue";
+		break;
+		
+	case 2: 
+		root.label = "No Interventions";
+		root.create_Action(idate, la -> {
+			la.allInterventionToggles.forEach(this::off);
+		});
+		break;
+	
+	case 3: 
+		root.label = "Current Interventions but Remove Handwashing, Sanitization, and Social Distancing";
+		root.create_Action(idate, la -> {
+			off(la.chkInterventionHandwashing);
+			off(la.chkInterventionSocialDistancing);
+			off(la.chkInterventionBusinessesDecontaminate);
+		});
+		break;
+	
+	case 4: 
+		root.label = "Current Interventions but Return Schools";
+		root.create_Action(idate, la -> {
+			off(la.chkInterventionStopSchool);
+		});
+		break;
+	
+	case 5: 
+		root.label = "Current Interventions but Return Non-Essential Businesses and Going Out";
+		root.create_Action(idate, la -> {
+			off(la.chkInterventionNonEssentialWork);
+			off(la.chkInterventionReduceGoingOut);
+		});
+		break;
+	
+	case 6: 
+		root.label = "Current Interventions but Return Non-Essential Businesses and Going Out AND Add Masks";
+		root.create_Action(idate, la -> {
+			off(la.chkInterventionNonEssentialWork);
+			off(la.chkInterventionReduceGoingOut);
+			on(la.chkInterventionWidespreadMasks);
+		});
+		break;
+	
+	case 7: 
+		root.label = "Current Interventions but Return Schools, Non-Essential Businesses, and Going Out";
+		root.create_Action(idate, la -> {
+			off(la.chkInterventionStopSchool);
+			off(la.chkInterventionNonEssentialWork);
+			off(la.chkInterventionReduceGoingOut);
+		});
+		break;
+	
+	case 8: 
+		root.label = "Current Interventions but Return Schools, Non-Essential Businesses, and Going Out AND Add Masks";
+		root.create_Action(idate, la -> {
+			off(la.chkInterventionStopSchool);
+			off(la.chkInterventionNonEssentialWork);
+			off(la.chkInterventionReduceGoingOut);
+			on(la.chkInterventionWidespreadMasks);
+		});
+		break;
+	
+	// Back to pre-interventions, but keep handwashing and social distancing and masks.
+	case 9: 
+		root.label = "Current Interventions but Add Masks";
+		root.create_Action(idate, la -> {
+			on(la.chkInterventionWidespreadMasks);
+		});
+		break;
+		
+	default: throw new RuntimeException("Unhandled iteration: " + getCurrentIteration());
+}]]></BeforeSimulationRunCode>
+			<AfterSimulationRunCode><![CDATA[// Tally up the total infected.
+try {
+	$(chartCumulativeCases).add(
+		root.label, 
+		root.localArea.statistics.getCumulativeInfections()
+	);
+	$(chartCumulativeSymptomaticCases).add(
+		root.label, 
+		root.localArea.statistics.getCumulativeSymptomaticInfections()
+	);
+	asyncLogger.log(
+		root.label, 
+		getCurrentReplication(),
+		root.localArea.statistics.getCumulativeInfections(),
+		root.localArea.statistics.getCumulativeSymptomaticInfections()
+	);
+	asyncLogger.flush();
+}
+catch (Throwable t) {
+	throw new RuntimeException("Problem on iteration " + getCurrentIteration(), t);
+}]]></AfterSimulationRunCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1590862104214</Id>
+					<Name><![CDATA[asyncLogger]]></Name>
+					<X>20</X><Y>490</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[AsyncLogger]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new AsyncLogger(
+	Paths.get("results.csv"),
+	"experimentId","runId","cumulativeInfections","cumulativeSymptomatic"
+)]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+			</Variables>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1590600200465</Id>
+					<Name><![CDATA[initialProvincialInterventions]]></Name>
+					<X>20</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[localArea]]></Name>
+						<Type><![CDATA[LocalArea]]></Type>
+					</Parameter>
+					<Body><![CDATA[// Setup interventions.
+Arrays.asList(
+	localArea.chkInterventionHandwashing, 
+	localArea.chkInterventionNonEssentialWork, 
+	localArea.chkInterventionSocialDistancing, 
+	localArea.chkInterventionStayHome,
+	localArea.chkInterventionStopSchool,
+	localArea.chkInterventionReduceGoingOut,
+	localArea.chkInterventionHospitalEquipment,
+	localArea.chkInterventionBusinessesDecontaminate
+).forEach(this::on);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1590600308758</Id>
+					<Name><![CDATA[on]]></Name>
+					<X>20</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[checkbox]]></Name>
+						<Type><![CDATA[ShapeCheckBox]]></Type>
+					</Parameter>
+					<Body><![CDATA[if (!checkbox.isSelected()) {
+	checkbox.setSelected(true, true);
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1590600376418</Id>
+					<Name><![CDATA[off]]></Name>
+					<X>20</X><Y>470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[checkbox]]></Name>
+						<Type><![CDATA[ShapeCheckBox]]></Type>
+					</Parameter>
+					<Body><![CDATA[if (checkbox.isSelected()) {
+	checkbox.setSelected(false, true);
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1590601017720</Id>
+					<Name><![CDATA[initialOutbreak]]></Name>
+					<X>20</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[localArea]]></Name>
+						<Type><![CDATA[LocalArea]]></Type>
+					</Parameter>
+					<Body><![CDATA[// Pick adults who work at the big employers.
+localArea.workplaces
+	.stream()
+	.filter(w -> localArea.workplaceEmployees.get(w).size() > 10)
+	.flatMap(w -> localArea.workplaceEmployees.get(w).stream())
+	.limit(10)
+	.forEach(person -> {
+		person.send(Person.MsgForceCOVID, person);
+	});]]></Body>
+				</Function>
+			</Functions>
+
+			<Presentation>
+				<Image>
+					<Id>1590599554435</Id>
+					<Name><![CDATA[image]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>1000</Width>
+					<Height>600</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+							<ClassName><![CDATA[LUMINESIM-Backdrop.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
+				<Text>
+					<Id>1590599554437</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>20</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[Regional COVID-19 Response Simulation: 
+Demo Two-Scenario with Replications]]></Text>
+					<Font>
+						<Name>Lato</Name>
+						<Size>24</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1590599554457</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>878</X><Y>70</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-14774017</Color>
+					<Text><![CDATA[Regional COVID-19 Response Simulation
+Master repository developed and maintained
+by Luminesim Simulation and Analytics
+www.luminesim.com]]></Text>
+					<Font>
+						<Name>Lato</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Text>
+					<Id>1590599554459</Id>
+					<Name><![CDATA[text7]]></Name>
+					<X>20</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[IMPORTANT
+By using this simulation you understand and acknowledge that no simulation is a perfect representation of the real world. Local conditions, nuances, and phenomena not captured in the 
+simulation mean the tool may deviate from real-world outcomes. This tool is therefore for your information only and should be interpreted using the documentation at www.luminesim.com/rcrs. 
+The simulation's results should only be used after planning for local conditions, consulting local authorities and stakeholders, and gaining the consent of local residents and organizations. 
+Under no circumstances should you change local COVID-19 strategies without first consulting provincial medical authorities.]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1590599554461</Id>
+					<Name><![CDATA[text8]]></Name>
+					<X>80</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[Cumulative Cases (All)]]></Text>
+					<Font>
+						<Name>Lato</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1590599554463</Id>
+					<Name><![CDATA[text9]]></Name>
+					<X>570</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[Cumulative Symptomatic Cases]]></Text>
+					<Font>
+						<Name>Lato</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Image>
+					<Id>1590599554465</Id>
+					<Name><![CDATA[image1]]></Name>
+					<X>790</X><Y>10</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>176.43</Width>
+					<Height>60</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+							<ClassName><![CDATA[LUMINESIM-Logo.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
+    			<BarChart>
+					<Id>1590601218445</Id>
+					<Name><![CDATA[chartCumulativeCases]]></Name>
+					<X>50</X><Y>210</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1590652800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>470</Width>
+					<Height>390</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>390</Width>
+						<Height>100</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>230</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ScaleFromExpression><![CDATA[0]]></ScaleFromExpression>
+					<ScaleToExpression><![CDATA[1]]></ScaleToExpression>
+					<ScaleType>AUTO</ScaleType>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+    			</BarChart>
+    			<BarChart>
+					<Id>1590864648632</Id>
+					<Name><![CDATA[chartCumulativeSymptomaticCases]]></Name>
+					<X>540</X><Y>210</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1590652800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>470</Width>
+					<Height>390</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>390</Width>
+						<Height>100</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>230</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ScaleFromExpression><![CDATA[0]]></ScaleFromExpression>
+					<ScaleToExpression><![CDATA[1]]></ScaleToExpression>
+					<ScaleType>AUTO</ScaleType>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+    			</BarChart>
+			</Presentation>
+
+			<AllowParallelEvaluations>true</AllowParallelEvaluations>
+			<UseFreeformParameters>true</UseFreeformParameters>
+			<NumberOfRuns>9</NumberOfRuns>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Stop at specified time]]></StopOption>
+				<InitialDate><![CDATA[1586908800000]]></InitialDate>	
+				<InitialTime><![CDATA[0.0]]></InitialTime>	
+				<FinalDate><![CDATA[1597276800000]]></FinalDate>	
+				<FinalTime><![CDATA[120.0]]></FinalTime>	
+			</ModelTimeProperties>
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<Title><![CDATA[Regional COVID-19 Response Simulation]]></Title>
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+			</PresentationProperties>
+			<ReplicationsProperties>
+				<UseReplication>true</UseReplication>
+				<FixedReplicationsNumber>true</FixedReplicationsNumber>
+				<ReplicationPerIteration>30</ReplicationPerIteration>
+				<MinimumReplication>2</MinimumReplication>
+				<MaximumReplication>10</MaximumReplication>
+				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
+				<ErrorPercent>0.5</ErrorPercent>
+				<ExpressionForConfidenceComputation><![CDATA[0]]></ExpressionForConfidenceComputation>
+			</ReplicationsProperties>
 		</ParamVariationExperiment>	
 	</Experiments>
 	<JavaClasses>
@@ -12798,6 +14352,10 @@ public interface EventTracker
 			<Path><![CDATA[locations.csv]]></Path>
 			<ReferencedFromUserCode>true</ReferencedFromUserCode>
 		</Resource>
+		<Resource>
+			<Path><![CDATA[alutilities.jar]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
 	</ModelResources>
 	<ClassPathEntry>
 		<ResourceReference>
@@ -12903,5 +14461,14 @@ public interface EventTracker
 		<Imported>false</Imported>
 		<Folder>false</Folder>
 	</ClassPathEntry>
+	<ClassPathEntry>
+		<ResourceReference>
+			<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+			<ClassName><![CDATA[alutilities.jar]]></ClassName>
+		</ResourceReference>
+		<Imported>true</Imported>
+		<Folder>false</Folder>
+	</ClassPathEntry>
+	<CloudModelUuid><![CDATA[8948cbe5-183f-4152-89cc-f690fae77f4f]]></CloudModelUuid>
 </Model>
 </AnyLogicWorkspace>
