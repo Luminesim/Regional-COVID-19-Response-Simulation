@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="MarkdownViewer++" />
+        <title>results.md</title>
+        <style type="text/css">
+            
+/* Avoid page breaks inside the most common attributes, especially for exports (i.e. PDF) */
+td, h1, h2, h3, h4, h5, p, ul, ol, li {
+    page-break-inside: avoid; 
+}
+
+        </style>
+      </head>
+    <body>
+        <h1 id="experiment-the-interactions-between-a-committed-policy-change-and-large-covid-19-outbreak-in-unity-saskatchewan-and-surrounding-rural-municipality">Experiment: The Interactions Between a Committed Policy Change and Large COVID-19 Outbreak in Unity, Saskatchewan and Surrounding Rural Municipality</h1>
+<p>Luminesim Simulation and Analytics <br>
+June 2020 <br>
+<a href="http://www.luminesim.com">www.luminesim.com</a></p>
+<p><em>This work has not been peer reviewed and is presented solely for the information and interest of the Regional COVID-19 Response Simulation community. <strong>Never change your local COVID-19 response strategy without direct instruction and approval from regional, provincial, and federal health authorities.</strong></em></p>
+<h2 id="overview">Overview</h2>
+<p>This experiment summarizes the results of RCRS in the Unity, Saskatchewan region and surrounding rural municipality of Round Valley No. 410. The effect of different COVID-19 responses is tested in the wake of a large outbreak. The community picks one set of interventions to adhere to regardless of consequences, and the number of <strong>true</strong> cases -- i.e. the number of cases that would be found if 100% of the community was tested -- is recorded and reported.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>This experiment explores the effect of different COVID-19 policies in a small community when an outbreak strikes.</li>
+<li>The community members immediately and fully commit to these policies, regardless of outcome. Importantly, this means that if the outbreak worsens individuals will still follow the policies. Results should therefore be interpreted as a projected upper limit of infections for each policy.</li>
+<li>The true cumulative number of cases is reported, which assumes that 100% test coverage is available and all infections, asymptomatic or symptomatic, are identified.</li>
+<li>The number of true cases will be substantially higher than what would be reported in the real world: this is in line with <a href="https://science.sciencemag.org/content/368/6490/489">some reports</a> indicating that up to 86% of cases have gone unreported and substantial numbers are entirely asymptomatic or only mildly symptomatic.</li>
+</ol>
+<h2 id="method">Method</h2>
+<p>RCRS is seeded with the population of Unity, SK and Round Valley No. 410 according to 2016 census figures. To avoid confusion with the province's current reopening strategy, counterfactual scenarios are explored where the simulation begins on 15 April 2020. When the simulation starts, an outbreak occurs in all of Unity's employers with at least 10 people followed by a new, random COVID-19 infection each day for the first week of the simulation; this approach is used to reduce sensitivity to initial conditions and ensure an outbreak (e.g. infecting an infant is less likely to trigger an outbreak than infecting someone at one of the town's major grocery stores) while still introducing some randomness into those initially infected. The area's residents are then assigned a COVID-19 response strategy to employ.  The outcomes of each strategy, which are followed immediately and consistently to the end of the simulation, are reported. These strategies are given below.</p>
+<p>Note that the percentages used for each intervention (i.e. intervention strength or efficacy) have been selected by the team; as intervention strength decreases, projected COVID-19 cases are likely to increase. Base parameter values can be found in the central RCRS documentation. For the purpose of this document, &quot;community location&quot; is a catch-all term for workplaces and schools used for any purpose (e.g. working hours, shopping location, social gatherings at after-school activity, etc.).</p>
+<ol>
+<li><strong>Continue initial provincial interventions.</strong> This is a continuation of the status quo: schools and non-essential locations (70%) are shut. Individuals reduce within-community travel and gathering to only essential purposes (-80% base rate; travel additionally canceled if destination is closed). Handwashing (-90% risk of infection from surfaces) and surface decontamination at locations is pervasive and frequent (3 times per hour). Social distancing is in effect (-90% risk of exposing others at locations where distancing possible, which excludes schools and homes). Individuals strongly favour staying home when sick (-90% chance of going out when in Symptomatic state). As mask use in the community is anecdotally inconsistent in the community, masks are not assumed to be used. The hospital processing COVID-19 cases, for simplicity designated to be the existing local hospital, is well-stocked for severe cases; while this impacts death rate, the death rate is not explored in this report.</li>
+<li><strong>Continue initial provincial interventions, but resume school.</strong> This scenario explores what might happen if schools were reopened. As of writing, the evidence is unclear as to how rapidly youth transmit COVID-19 relative to adults: students are therefore assumed to spread COVID-19 at the same rate as adults. Schools are also assumed to not be capable of enforcing social distancing.</li>
+<li><strong>Continue initial provincial interventions, but remove handwashing, sanitization, and social distancing.</strong> This scenario explores what might happen if individual-level prevention standards wane.</li>
+<li><strong>Remove all provincial interventions.</strong> This scenario explores what might happen if community members eschew all interventions, i.e., school resumes, all locations reopen, within-community travel and gathering resumes, going out while sick returns to the base rate, and social distancing, handwashing, and surface decontamination end.</li>
+<li><strong>Continue initial provincial interventions, but resume business activity and within-community travel.</strong> This scenario explores what might happen if community locations (excluding schools) reopen to full capacity and residents resume interacting with those locations.</li>
+<li><strong>Continue initial provincial interventions, but resume business activity and within-community travel with masks.</strong> This scenario explores what might happen if community locations (excluding schools) reopen to full capacity and residents resume interacting with those locations <em>with universal mask usage.</em> This strategy is explored as many jurisdictions appear to be reducing COVID-19 spread due to widespread mask usage.</li>
+<li><strong>Continue initial provincial interventions, but resume business activity, within-community travel, and resume schools.</strong> This scenario explores what might happen if community locations (including schools) and interaction at community locations resumes in full. This strategy is explored as a return to normal with individual-level preventative measures.</li>
+<li><strong>Continue initial provincial interventions, but resume business activity, within-community travel, and resume schools with masks</strong> This scenario explores what might happen if community locations (including schools) and interaction at community locations resumes in full <em>with universal mask usage.</em> As above, this strategy is explored as a return to normal but with preventative measures supplemented with widespread mask use.</li>
+<li><strong>Continue initial provincial interventions, but add masks.</strong> This scenario explores what might happen if initial provincial measures are supplemented with universal mask adoption. As above, this is explored as many jurisdictions appear to be experiencing beneficial outcomes from mask usage.</li>
+</ol>
+<p>For simplicity, all community members fully and immediately commit to these policy changes regardless of outcome.</p>
+<h3 id="simulation-timeline">Simulation Timeline</h3>
+<ol>
+<li>The simulation starts on 15 April 2020. This is used as a counterfactual to avoid confusion with the provincial reopening strategy.</li>
+<li>COVID-19 strategies change on 15 April 2020 moments after the initial outbreak.</li>
+<li>The simulation runs for 120 days (i.e. to 13 August 2020).</li>
+</ol>
+<h3 id="code-version">Code Version</h3>
+<p>The model revision used in this experiment is <a href="https://github.com/Luminesim/Regional-COVID-19-Response-Simulation/commit/fe012aaca51207a0bd6fa16d395d0ac2f9f81815">dev/fe012aaca51207a0bd6fa16d395d0ac2f9f81815</a></p>
+<h2 id="results">Results</h2>
+<p>Results can be seen in the following chart and accompanying data table; each intervention is numbered according to the list in <em>Method</em> section.</p>
+<p><img src="./results-chart.png" alt="Result Chart" /></br></p>
+<p><strong>True Cases (All, Cumulative)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Mean</th>
+<th>Standard Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>88.6</td>
+<td>39.4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1209.6</td>
+<td>232.6</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1506.7</td>
+<td>242.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2933.6</td>
+<td>6.6</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1883.5</td>
+<td>62.4</td>
+</tr>
+<tr>
+<td>6</td>
+<td>374.9</td>
+<td>243.1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1883.2</td>
+<td>65.4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>347.7</td>
+<td>254.9</td>
+</tr>
+<tr>
+<td>9</td>
+<td>69.4</td>
+<td>33.3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>True Symptomatic Cases (Cumulative)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Mean</th>
+<th>Standard Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>26.9</td>
+<td>13.8</td>
+</tr>
+<tr>
+<td>2</td>
+<td>360.0</td>
+<td>69.3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>450.8</td>
+<td>77.8</td>
+</tr>
+<tr>
+<td>4</td>
+<td>873.7</td>
+<td>21.4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>559.5</td>
+<td>30.4</td>
+</tr>
+<tr>
+<td>6</td>
+<td>106.2</td>
+<td>72.7</td>
+</tr>
+<tr>
+<td>7</td>
+<td>566.0</td>
+<td>34.9</td>
+</tr>
+<tr>
+<td>8</td>
+<td>98.9</td>
+<td>74.5</td>
+</tr>
+<tr>
+<td>9</td>
+<td>22.0</td>
+<td>11.2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="discussion">Discussion</h2>
+<p>Unsurprisingly, the interventions with the least COVID-19 cases were those where current policies are left in place (Scenario 1) or where current policies are supplemented with masks (Scenario 9). The worst performing policy is to remove all interventions (Scenario 4), which, if no response is taken even in light of an outbreak, consumes the entire region. The best strategy for reopening partially or fully includes masks (Scenarios 6 and 8) on top of all existing preventative measures (social distancing, handwashing, surface decontamination), which is in line with existing <a href="https://arxiv.org/pdf/2004.13553.pdf">studies showing the efficacy of masks</a>. In between these extremes lies reopening schools and/or community locations such as businesses (Scenarios 2, 5, and 7) <em>without</em> masks, which leaves a much higher risk of widespread outbreak. Similarly, removing preventative measures (Scenario 3) leaves the community open to infection.</p>
+<p>The results of retaining all interventions (Scenario 1) is unsurprising. With people largely isolated and heavy prevention in place, COVID-19 has difficulty gaining a foothold in the community. Adding masks (Scenario 9) only marginally improves this specific scenario: since people aren't being infected anyway, masks can only do so little. Scenario 4 -- no interventions -- is similarly unsurprising in that full, unprotected contact in a  community that regularly engages in social contact causes COVID-19 to spread rapidly. While near-100% spread is unlikely in the real world due to likely self-isolation in response to an outbreak, COVID-19 can spread widely even with preventative measures in place. For example, New York City may have more than <a href="https://thehill.com/policy/healthcare/494324-27m-new-yorkers-have-had-coronavirus-preliminary-data-shows">20% of their population infected</a> despite preventative measures: while the Unity region is clearly not as dense as New York City, <a href="https://www.washingtonpost.com/nation/2020/05/24/coronavirus-rural-america-outbreaks/?arc404=true">outbreaks in rural USA</a> indicate that density may not be the defining factor in outbreak size.</p>
+<p>If stay-at-home policies end, our results indicate that masks may provide substantial benefit (Scenarios 6 and 8). A large outbreak can sometimes be entirely prevented or substantially reduced when compared with the no-mask equivalents (Scenarios 5 and 7). Note, however, that these scenarios explored universal mask usage outside the home: partial mask usage may be substantially less effective.</p>
+<p>Continued community vigilance is suggested by simulation results: even with limited contact due to stay-at-home policies, removing social distancing, handwashing, and surface decontamination allows the infection to spread (Scenario 3). Public places allow infection to be acquired, which then spreads in the home, which then reinforces the rate at which infection can be spread and acquired in public places.</p>
+<p>Scenario 2 -- the return of schools -- is a result wherein more research is required. Excluding hospitalization and death rates, which are known to be lower for youth, RCRS assumes that the rate of infection spread and development of symptoms is identical for youth and adults. There is a myriad of debate on the subject of youth susceptibility and spread of COVID-19; until this debate is resolved, Scenario 2's results should be interpreted as a pessimistic scenario that warrants continued caution.</p>
+<p>As only some COVID-19 infections develop symptoms, the number of symptomatic cases is always smaller than the total number of cases. This has implications for identifying an outbreak in the real world. In these scenarios, we report the true number of cases (symptomatic or otherwise); in the real world, only a subset of these cases are likely to be identified, which, anecdotally, is likely to be skewed towards identifying those with symptoms. A real-world outbreak would therefore be reported with much smaller numbers than the true number of cases, and thus a &quot;small&quot; outbreak identified through incomplete testing of symptomatic people should be taken extremely seriously. <a href="https://science.sciencemag.org/content/368/6490/489">Some sources have suggested that there can be a 1:10 ratio</a> between the number of reported and actual cases if testing is sparse: 300 positive tests in a region with approximately 3000 people is therefore cause for serious concern.</p>
+<h2 id="limitations">Limitations</h2>
+<p>The experiment assumes three critical items in addition to the other factors in RCRS:</p>
+<ol>
+<li>The community does not rethink its strategy mid-outbreak</li>
+<li>The community immediately and fully adheres to the strategy</li>
+<li>Children experience the same infection dynamics as their parents</li>
+</ol>
+<p>As stated in prior sections, these limitations mean results should be interpreted as pessimistic outcomes: rapid self-isolation and closure of non-essential facilities following an outbreak could -- <em>if rapidly implemented</em> -- reduce outbreak severity.</p>
+<p>While the simulation calculates hospitalization and death rates, we do not report these figures due to the size of the community.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Our results suggest that there is good reason to be cautious and respond rapidly to a COVID-19 outbreak. By entirely removing the current suite of interventions, an outbreak left unchecked could consume the entire community; by retaining all current interventions, our results suggest that outbreaks are dramatically reduced. As interventions are removed, the risk of a large outbreak increases. Our results also suggest that the addition of masks could counteract this risk assuming they are widely and consistently adopted and properly used. While our results show a large risk in reopening schools, the ongoing debate about how youth develop and spread COVID-19 means that this scenario requires further data to confidently suggest action. If youth <em>do not</em> readily spread COVID-19 this may reduce the outbreak size in other scenarios.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>We are immensely thankful to those who donated to our <a href="https://gf.me/u/x28ahx">GoFundMe campaign</a> and the even larger group who shared it. We are able to spend more time on the model thanks to their contributions.</p>
+<h2 id="conflicts-of-interest-other-notes">Conflicts of Interest &amp; Other Notes</h2>
+<p>We have no conflicts of interest to declare. The Town of Unity was not involved in producing these results nor did it commission them. These results should not be taken as an endorsement from the Town of Unity nor surrounding rural municipalities. These results have not been peer reviewed. <strong>Never change your local COVID-19 response strategy without direct approval from regional, provincial, and federal health authorities.</strong></p>
+
+    </body>
+</html>
+            
