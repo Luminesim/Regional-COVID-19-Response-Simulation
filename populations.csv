@@ -1,0 +1,81 @@
+startAge,endAge,count,locationId,segment
+0,5,25,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+5,10,35,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+10,15,30,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+15,20,20,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+20,25,5,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+25,30,15,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+30,35,25,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+35,40,30,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+40,45,25,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+45,50,20,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+50,55,30,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+55,60,35,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+60,65,35,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+65,70,40,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+70,75,20,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+75,80,10,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+80,85,0,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+85,90,0,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+90,95,0,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+95,100,0,"Round Valley No. 410, Rural municipality [Census subdivision], Saskatchewan",All
+0,5,165,"Unity, Town [Census subdivision], Saskatchewan",All
+5,10,200,"Unity, Town [Census subdivision], Saskatchewan",All
+10,15,185,"Unity, Town [Census subdivision], Saskatchewan",All
+15,20,135,"Unity, Town [Census subdivision], Saskatchewan",All
+20,25,120,"Unity, Town [Census subdivision], Saskatchewan",All
+25,30,165,"Unity, Town [Census subdivision], Saskatchewan",All
+30,35,165,"Unity, Town [Census subdivision], Saskatchewan",All
+35,40,155,"Unity, Town [Census subdivision], Saskatchewan",All
+40,45,150,"Unity, Town [Census subdivision], Saskatchewan",All
+45,50,130,"Unity, Town [Census subdivision], Saskatchewan",All
+50,55,145,"Unity, Town [Census subdivision], Saskatchewan",All
+55,60,190,"Unity, Town [Census subdivision], Saskatchewan",All
+60,65,125,"Unity, Town [Census subdivision], Saskatchewan",All
+65,70,130,"Unity, Town [Census subdivision], Saskatchewan",All
+70,75,90,"Unity, Town [Census subdivision], Saskatchewan",All
+75,80,90,"Unity, Town [Census subdivision], Saskatchewan",All
+80,85,105,"Unity, Town [Census subdivision], Saskatchewan",All
+85,90,80,"Unity, Town [Census subdivision], Saskatchewan",All
+90,95,35,"Unity, Town [Census subdivision], Saskatchewan",All
+95,100,5,"Unity, Town [Census subdivision], Saskatchewan",All
+0,5,0,Unity-LTC,All
+5,10,0,Unity-LTC,All
+10,15,0,Unity-LTC,All
+15,20,0,Unity-LTC,All
+20,25,0,Unity-LTC,All
+25,30,0,Unity-LTC,All
+30,35,0,Unity-LTC,All
+35,40,0,Unity-LTC,All
+40,45,0,Unity-LTC,All
+45,50,0,Unity-LTC,All
+50,55,0,Unity-LTC,All
+55,60,0,Unity-LTC,All
+60,65,0,Unity-LTC,All
+65,70,0,Unity-LTC,All
+70,75,0,Unity-LTC,All
+75,80,0,Unity-LTC,All
+80,85,5,Unity-LTC,All
+85,90,0,Unity-LTC,All
+90,95,30,Unity-LTC,All
+95,100,4,Unity-LTC,All
+0,5,0,Unity-LutherPlace,All
+5,10,0,Unity-LutherPlace,All
+10,15,0,Unity-LutherPlace,All
+15,20,0,Unity-LutherPlace,All
+20,25,0,Unity-LutherPlace,All
+25,30,0,Unity-LutherPlace,All
+30,35,0,Unity-LutherPlace,All
+35,40,0,Unity-LutherPlace,All
+40,45,0,Unity-LutherPlace,All
+45,50,0,Unity-LutherPlace,All
+50,55,0,Unity-LutherPlace,All
+55,60,0,Unity-LutherPlace,All
+60,65,0,Unity-LutherPlace,All
+65,70,35,Unity-LutherPlace,All
+70,75,20,Unity-LutherPlace,All
+75,80,10,Unity-LutherPlace,All
+80,85,4,Unity-LutherPlace,All
+85,90,0,Unity-LutherPlace,All
+90,95,0,Unity-LutherPlace,All
+95,100,0,Unity-LutherPlace,All
