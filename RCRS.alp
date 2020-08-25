@@ -3269,7 +3269,7 @@ if (!isAsleep() && currentLocation.areSurfacesContaminated(this)) {
 					<IconOffset>15.0</IconOffset>
 					<Properties Source="1586725812206" Target="1586725812206" Trigger="rate">
 						<Action><![CDATA[// If someone else in the location and we can talk to them, do so.
-if (!isAsleep() && currentLocation.getCurrentMembers().size() > 1) {
+if (!isAsleep() && currentLocation.getNearbyMembers(this).size() > 1) {
 	double pExpose = localArea.pInfectAnotherViaSpeakingInteractionWhereDistancingIsNotPossible.get();
 	if (currentLocation.isSocialDistancingPossible()) {
 		pExpose = localArea.pInfectAnotherViaSpeakingInteractionWhereDistancingIsPossible.get();
@@ -3288,10 +3288,10 @@ if (!isAsleep() && currentLocation.getCurrentMembers().size() > 1) {
 	
 	// Do a fast random select of a subset of the current location.
 	// We assume we can't talk to everyone.
-	int maxInfect = limitMax(currentLocation.getCurrentMembers().size() - 1, maxPeopleExposedPerConversation);
+	int maxInfect = limitMax(currentLocation.getNearbyMembers(this).size() - 1, maxPeopleExposedPerConversation);
 	int toExpose = (int)(maxInfect * pExpose) + (randomTrue(pExpose) ? 1 : 0);
 	if (toExpose > 0) {
-		Set<Person> others = new HashSet<>(currentLocation.getCurrentMembers());
+		Set<Person> others = new HashSet<>(currentLocation.getNearbyMembers(this));
 		others.remove(this);
 		for (int i = 0; i < toExpose; i += 1) {
 			Person other = randomFrom(others);
@@ -3371,7 +3371,7 @@ randomTrue(1 - pPreventCovidIfExposedViaConversation)]]></Guard>
 					<IconOffset>15.0</IconOffset>
 					<Properties Source="1586725812204" Target="1586725812204" Trigger="rate">
 						<Action><![CDATA[// If someone else in the location and we can talk to them, do so.
-if (!isAsleep() && currentLocation.getCurrentMembers().size() > 1) {
+if (!isAsleep() && currentLocation.getNearbyMembers(this).size() > 1) {
 	double pExpose = localArea.pInfectAnotherViaSpeakingInteractionWhereDistancingIsNotPossible.get();
 	if (currentLocation.isSocialDistancingPossible()) {
 		pExpose = localArea.pInfectAnotherViaSpeakingInteractionWhereDistancingIsPossible.get();
@@ -3390,10 +3390,10 @@ if (!isAsleep() && currentLocation.getCurrentMembers().size() > 1) {
 	
 	// Do a fast random select of a subset of the current location.
 	// We assume we can't talk to everyone.
-	int maxInfect = limitMax(currentLocation.getCurrentMembers().size() - 1, maxPeopleExposedPerConversation);
+	int maxInfect = limitMax(currentLocation.getNearbyMembers(this).size() - 1, maxPeopleExposedPerConversation);
 	int toExpose = (int)(maxInfect * pExpose) + (randomTrue(pExpose) ? 1 : 0);
 	if (toExpose > 0) {
-		Set<Person> others = new HashSet<>(currentLocation.getCurrentMembers());
+		Set<Person> others = new HashSet<>(currentLocation.getNearbyMembers(this));
 		others.remove(this);
 		for (int i = 0; i < toExpose; i += 1) {
 			Person other = randomFrom(others);
@@ -5831,7 +5831,17 @@ referenceList = null;]]></DestroyCode>
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[references().useRevisable(
 	0.02,
-	references().placeholder("P(Expose someone during conversation | Location where social distancing NOT possible)")
+	references().placeholder("P(Expose someone during conversation | Location where social distancing is NOT possible)")
+		.title("Multiple sources")
+		.note("Evidence on per-interaction transmission probability is highly mixed. Some sources say 10-20%; others say closer to 1%. "+
+			"Anecdotally, research indicates that rates are nearer the high end among family and much lower among random strangers. " +
+			"The exact definition of a 'contact' or 'interaction' is also fuzzy in most research; is it a passing, or a 60 minute conversation? " +
+			"Since this model includes interactions with everyone, we can't assume the high end for each interaction. " +
+			"These papers have a breakdown by location, relation, and COVID status, and seem to indicate somewhere in the 0.3-6% range. " + 
+			"Since most people with COVID are asymptomatic or mild, we pick the low end of this range.")
+		.URL("https://www.cebm.net/study/covid-19-epidemiological-characteristics-of-covid-19-close-contacts-in-ningbo-city/ and https://www.cebm.net/study/covid-19-risk-of-transmission-in-covid-19-among-close-contacts/")
+		.accessed(2020, 8, 16)
+		.originalDate(2020, 6, 30)
 )]]></Code>
 						</InitialValue>
 					</Properties>
@@ -5849,7 +5859,17 @@ referenceList = null;]]></DestroyCode>
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[references().useRevisable(
 	0.02,
-	references().placeholder("P(Infect someone during conversation | Location where social distancing is possible)")
+	references().placeholder("P(Expose someone during conversation | Location where social distancing is possible)")
+		.title("Multiple sources")
+		.note("Evidence on per-interaction transmission probability is highly mixed. Some sources say 10-20%; others say closer to 1%. "+
+			"Anecdotally, research indicates that rates are nearer the high end among family and much lower among random strangers. " +
+			"The exact definition of a 'contact' or 'interaction' is also fuzzy in most research; is it a passing, or a 60 minute conversation? " +
+			"Since this model includes interactions with everyone, we can't assume the high end for each interaction. " +
+			"These papers have a breakdown by location, relation, and COVID status, and seem to indicate somewhere in the 0.3-6% range. " + 
+			"Since most people with COVID are asymptomatic or mild, we pick the low end of this range.")
+		.URL("https://www.cebm.net/study/covid-19-epidemiological-characteristics-of-covid-19-close-contacts-in-ningbo-city/ and https://www.cebm.net/study/covid-19-risk-of-transmission-in-covid-19-among-close-contacts/")
+		.accessed(2020, 8, 16)
+		.originalDate(2020, 6, 30)
 )]]></Code>
 						</InitialValue>
 					</Properties>
@@ -6384,6 +6404,64 @@ referenceList = null;]]></DestroyCode>
 							<Code><![CDATA[references().useRevisable(
 	false,
 	references().placeholder("School week-on, week-off cohorts enabled")
+)]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1597609322013</Id>
+					<Name><![CDATA[modifierForConversationTransmissionWhenSocialDistancingInPlace]]></Name>
+					<X>1410</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[references().use(
+	2.6 / 12.8,
+	references().citation("Modifier applied to p(transmission in conversation) when social distancing activated")
+		.title("Social distancing and masks reduce risk of getting Covid-19, review finds")
+		.authority("CNN")
+		.author("Katie", "Hunt")
+		.URL("https://www.cnn.com/2020/06/01/health/review-masks-social-distancing-covid-19-wellness/index.html")
+		.originalDate(2020, 6, 1)
+		.accessed(2020, 8, 16)
+		.note(
+			"Lancet study. "+
+			"Quote: 'The chance of transmission at a distance of less than 1 meter (3.3 feet) was 12.8%, while that fell to 2.6% at a distance of more than 1 meter (3.3 feet). It added that distances of 2 meters (6.6 feet) could be more effective.'" +
+			"Note that we purposefully do not use the averaged 12.8 transmission rate. The average in the paper is derived from research where infected individuals regularly and very closely interact with others (e.g. lots of healthcare worker / patient interaction research). This is consistent with other papers showing high transmission rates with family members and those directly on shared transport. Since our model uses all interaction types (both brief and long and/or repeated), we skew to a lower rate. However, we can still use this research to identify the effect of social distancing as the averages are derived from the same source."
+		)
+)]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1597609433126</Id>
+					<Name><![CDATA[modifierForConversationTransmissionWhenMasksInPlace]]></Name>
+					<X>1410</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[references().use(
+	3.1 / 17.4,
+	references().citation("Modifier applied to p(transmission in conversation) when social distancing activated")
+		.title("Social distancing and masks reduce risk of getting Covid-19, review finds")
+		.authority("CNN")
+		.author("Katie", "Hunt")
+		.URL("https://www.cnn.com/2020/06/01/health/review-masks-social-distancing-covid-19-wellness/index.html")
+		.originalDate(2020, 6, 1)
+		.accessed(2020, 8, 16)
+		.note(
+			"Lancet study. "+
+			"Quote: 'The chance of transmission at a distance of less than 1 meter (3.3 feet) was 12.8%, while that fell to 2.6% at a distance of more than 1 meter (3.3 feet). It added that distances of 2 meters (6.6 feet) could be more effective.'" +
+			"Note that we purposefully do not use the averaged 12.8 transmission rate. The average in the paper is derived from research where infected individuals regularly and very closely interact with others (e.g. lots of healthcare worker / patient interaction research). This is consistent with other papers showing high transmission rates with family members and those directly on shared transport. Since our model uses all interaction types (both brief and long and/or repeated), we skew to a lower rate. However, we can still use this research to identify the effect of social distancing as the averages are derived from the same source."
+		)
 )]]></Code>
 						</InitialValue>
 					</Properties>
@@ -7832,6 +7910,9 @@ return referenceList;]]></Body>
 						<Parameter>
 							<Name><![CDATA[references]]></Name>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[isSocialDistancingPossibleInGroup]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -8429,7 +8510,7 @@ return referenceList;]]></Body>
 						<Enabled>true</Enabled>
 						<ActionCode><![CDATA[if (value) {
 	pInfectAnotherViaSpeakingInteractionWhereDistancingIsPossible.revise(
-		pInfectAnotherViaSpeakingInteractionWhereDistancingIsPossible.get() * 0.10, 
+		pInfectAnotherViaSpeakingInteractionWhereDistancingIsPossible.get() * modifierForConversationTransmissionWhenSocialDistancingInPlace, 
 		date()
 	);
 }
@@ -8439,7 +8520,7 @@ else {
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<LabelText><![CDATA[Social Distancing (-90% risk of exposing others outside home)]]></LabelText>
+						<LabelText><![CDATA[Social Distancing (reduce risk of exposing others outside home)]]></LabelText>
 						<DefaultValueCode><![CDATA[false]]></DefaultValueCode>
 						<LinkTo>false</LinkTo>
 	 				</ExtendedProperties>
@@ -8520,13 +8601,13 @@ tertiarySchools.forEach(toggleOpen);]]></ActionCode>
 						<ActionCode><![CDATA[if (value) {
 	// Reduce likelihood of breathing on someone.
 	modifierInfectAnotherOutsideHomeViaConversation.revise(
-		modifierInfectAnotherOutsideHomeViaConversation.get() * 0.30, 
+		modifierInfectAnotherOutsideHomeViaConversation.get() * modifierForConversationTransmissionWhenMasksInPlace, 
 		date()
 	);
 	
 	// Reduce likelihood of surface contamination.
 	pSurfaceContaminationPerHour.revise(
-		pSurfaceContaminationPerHour.get() * 0.30, 
+		pSurfaceContaminationPerHour.get() * modifierForConversationTransmissionWhenMasksInPlace, 
 		date()
 	);
 }
@@ -8537,7 +8618,7 @@ else {
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<LabelText><![CDATA[Masks when out (-70% risk of exposing others + contaminating surfaces)]]></LabelText>
+						<LabelText><![CDATA[Masks when out (reduce risk of exposing others + contaminating surfaces)]]></LabelText>
 						<DefaultValueCode><![CDATA[false]]></DefaultValueCode>
 						<LinkTo>false</LinkTo>
 	 				</ExtendedProperties>
@@ -9294,13 +9375,13 @@ else {
 						<ActionCode><![CDATA[if (value) {
 	// Reduce likelihood of breathing on someone.
 	modifierInfectAnotherAtSchoolViaConversation.revise(
-		modifierInfectAnotherAtSchoolViaConversation.get() * 0.30, 
+		modifierInfectAnotherAtSchoolViaConversation.get() * modifierForConversationTransmissionWhenMasksInPlace, 
 		date()
 	);
 	
 	// Reduce likelihood of surface contamination.
 	pSurfaceContaminationPerHourAtSchool.revise(
-		pSurfaceContaminationPerHourAtSchool.get() * 0.30, 
+		pSurfaceContaminationPerHourAtSchool.get() * modifierForConversationTransmissionWhenMasksInPlace, 
 		date()
 	);
 }
@@ -9311,7 +9392,7 @@ else {
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<LabelText><![CDATA[L2. Classrooms require masks (-70% risk)]]></LabelText>
+						<LabelText><![CDATA[L2. Classrooms require masks (reduce risk)]]></LabelText>
 						<DefaultValueCode><![CDATA[false]]></DefaultValueCode>
 						<LinkTo>false</LinkTo>
 	 				</ExtendedProperties>
@@ -18347,7 +18428,7 @@ Under no circumstances should you change local COVID-19 strategies without first
 			<ReplicationsProperties>
 				<UseReplication>true</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
-				<ReplicationPerIteration>3</ReplicationPerIteration>
+				<ReplicationPerIteration>30</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
 				<MaximumReplication>10</MaximumReplication>
 				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
