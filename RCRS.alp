@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.5.2.202001241823" AlpVersion="8.5.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.6.0.202008201426" AlpVersion="8.5.7">
 <Model>
 	<Id>1586725782349</Id>
 	<Name><![CDATA[RCRS]]></Name>
@@ -8561,7 +8561,7 @@ people.forEach(person -> {
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1586725812393</Id>
 					<Name><![CDATA[chkInterventionStopSchool]]></Name>
-					<X>550</X><Y>260</Y>
+					<X>550</X><Y>530</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8579,7 +8579,7 @@ tertiarySchools.forEach(toggleOpen);]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<LabelText><![CDATA[Stop school]]></LabelText>
+						<LabelText><![CDATA[L4. Stop school]]></LabelText>
 						<DefaultValueCode><![CDATA[false]]></DefaultValueCode>
 						<LinkTo>false</LinkTo>
 	 				</ExtendedProperties>
@@ -8588,7 +8588,7 @@ tertiarySchools.forEach(toggleOpen);]]></ActionCode>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1586725812395</Id>
 					<Name><![CDATA[chkInterventionWidespreadMasks]]></Name>
-					<X>550</X><Y>440</Y>
+					<X>550</X><Y>410</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8627,7 +8627,7 @@ else {
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1586725812397</Id>
 					<Name><![CDATA[chkInterventionBusinessesDecontaminate]]></Name>
-					<X>550</X><Y>290</Y>
+					<X>550</X><Y>260</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8662,7 +8662,7 @@ else {
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1586725812404</Id>
 					<Name><![CDATA[chkInterventionHandwashing]]></Name>
-					<X>550</X><Y>320</Y>
+					<X>550</X><Y>290</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8944,7 +8944,7 @@ else {
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1588720601944</Id>
 					<Name><![CDATA[chkInterventionNonEssentialWork]]></Name>
-					<X>550</X><Y>350</Y>
+					<X>550</X><Y>320</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8996,7 +8996,7 @@ else {
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1588724393303</Id>
 					<Name><![CDATA[chkInterventionReduceGoingOut]]></Name>
-					<X>550</X><Y>380</Y>
+					<X>550</X><Y>350</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9048,7 +9048,7 @@ else {
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1588958217263</Id>
 					<Name><![CDATA[chkInterventionHospitalEquipment]]></Name>
-					<X>550</X><Y>410</Y>
+					<X>550</X><Y>380</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9292,7 +9292,7 @@ www.luminesim.com]]></Text>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1596824701884</Id>
 					<Name><![CDATA[chkInterventionWellIsolatedClassrooms]]></Name>
-					<X>550</X><Y>470</Y>
+					<X>550</X><Y>440</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9318,7 +9318,7 @@ www.luminesim.com]]></Text>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1596824739767</Id>
 					<Name><![CDATA[chkInterventionWeekOnWeekOffClassrooms]]></Name>
-					<X>550</X><Y>530</Y>
+					<X>550</X><Y>500</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9362,7 +9362,7 @@ else {
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1596825593016</Id>
 					<Name><![CDATA[chkInterventionClassroomMasks]]></Name>
-					<X>550</X><Y>500</Y>
+					<X>550</X><Y>470</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11463,7 +11463,7 @@ import java.nio.file.Path;]]></Import>
 				<Event>
 					<Id>1590599434977</Id>
 					<Name><![CDATA[provincialInterventions]]></Name>
-					<X>560</X><Y>500</Y>
+					<X>560</X><Y>620</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11500,7 +11500,7 @@ Arrays.asList(
 	localArea.chkInterventionNonEssentialWork, 
 	localArea.chkInterventionSocialDistancing, 
 	localArea.chkInterventionStayHome,
-	localArea.chkInterventionStopSchool,
+	//localArea.chkInterventionStopSchool,
 	localArea.chkInterventionReduceGoingOut,
 	localArea.chkInterventionHospitalEquipment,
 	localArea.chkInterventionBusinessesDecontaminate
@@ -11510,7 +11510,7 @@ Arrays.asList(
 					<Id>1590599434987</Id>
 					<Name><![CDATA[initialOutbreaksAtBusinesses]]></Name>
 					<Description><![CDATA[Infects people.]]></Description>
-					<X>560</X><Y>520</Y>
+					<X>560</X><Y>580</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11551,7 +11551,7 @@ localArea.workplaces
 				<Event>
 					<Id>1590599434993</Id>
 					<Name><![CDATA[testingBurst]]></Name>
-					<X>560</X><Y>540</Y>
+					<X>780</X><Y>580</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11732,27 +11732,6 @@ if (dateToTime(toDate(2020,4-1,30)) >= time()) {
 					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
 
 			<Presentation>
-				<Text>
-					<Id>1589490491812</Id>
-					<Name><![CDATA[text7]]></Name>
-					<X>550</X><Y>470</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-14774017</Color>
-					<Text><![CDATA[Key Events:]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>14</Size>
-						<Style>1</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
 				<EmbeddedObjectPresentation>
 					<Id>1589823919796</Id>
 					<Name><![CDATA[localArea_presentation]]></Name>
@@ -12109,8 +12088,8 @@ This is a simulation of COVID-19 spread designed to be rapidly deployed in small
 outbreak. The simulation is designed to test strategies that may reduce COVID-19 spread and to explore the consequences of removing existing strategies 
 (e.g. removing social distancing, reopening schools, etc.). As small centres by definition have small populations, its results can vary based on the exact 
 community members and locations that are infected. The simulation's results should therefore be used as guides only: it should not be used to predict the 
-exact date that COVID-19 will enter the population, nor exact dates on which it will leave, nor the exact damage (or lack thereof) it will cause. For more information, 
-visit www.luminesim.com/rcrs. To see the code and documentation, visit http://bit.ly/3dTVddU. Consider contributing to our GoFundMe at http://gf.me/u/x28ahx
+exact date that COVID-19 will enter the population, nor exact dates on which it will leave, nor the exact damage (or lack thereof) it will cause. 
+For more information, visit www.luminesim.com/rcrs. To see the code and documentation, visit http://bit.ly/3dTVddU. 
 
 Key Takeaway
 This simulation helps identify strategies that a small center could employ to reduce the human impact of COVID-19 as local conditions evolve. It does 
@@ -12135,7 +12114,7 @@ The simulation includes these critical mechanics:
 
 Improvements & Contributions
 We welcome new data, bug reports, corrections, and suggestions for improvement. Please visit www.luminesim.com/rcrs to learn more and contribute.
-The codebase can be viewed on GitHub at http://bit.ly/3dTVddU . Consider contributing to our GoFundMe at http://gf.me/u/x28ahx
+The codebase can be viewed on GitHub at http://bit.ly/3dTVddU . 
 
 Important:
 By using this simulation you understand and acknowledge that no simulation is a perfect representation of the real world. Local conditions, 
@@ -12192,6 +12171,28 @@ www.luminesim.com/rcrs]]></Text>
 						<ImageResourceReference>
 							<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
 							<ClassName><![CDATA[LUMINESIM-Logo.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
+				<Image>
+					<Id>1603842207153</Id>
+					<Name><![CDATA[image2]]></Name>
+					<X>820</X><Y>510</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>160</Width>
+					<Height>80</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[com.luminesim.covid.rcrs]]></PackageName>
+							<ClassName><![CDATA[1200px-Flag_of_Saskatchewan.svg.png]]></ClassName>
 						</ImageResourceReference>
 					</ImageFiles>
 					<OriginalSize>false</OriginalSize>
@@ -15300,6 +15301,7 @@ www.luminesim.com/rcrs]]></Text>
 				<FinalDate><![CDATA[1597276800000]]></FinalDate>	
 				<FinalTime><![CDATA[120.0]]></FinalTime>	
 			</ModelTimeProperties>
+			<BypassInitialScreen>false</BypassInitialScreen>
 		</SimulationExperiment>
 		<!--   =========   Simulation Experiment   ========  -->
 		<SimulationExperiment ActiveObjectClassId="1589490491803">
@@ -15537,6 +15539,7 @@ www.luminesim.com/rcrs]]></Text>
 				<FinalDate><![CDATA[1597276800000]]></FinalDate>	
 				<FinalTime><![CDATA[120.0]]></FinalTime>	
 			</ModelTimeProperties>
+			<BypassInitialScreen>false</BypassInitialScreen>
 		</SimulationExperiment>
 		<!--   =========  Parameter Variation Experiment   ========  -->
 		<ParamVariationExperiment ActiveObjectClassId="1588971822553">
@@ -18802,12 +18805,22 @@ public interface ICloseContactGroup
 			<Path><![CDATA[alutilities.jar]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		</Resource>
+		<Resource>
+			<Path><![CDATA[1200px-Flag_of_Saskatchewan.svg.png]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
 	</ModelResources>
     <RequiredLibraryReference>
 		<LibraryName><![CDATA[com.anylogic.libraries.processmodeling]]></LibraryName>
 		<VersionMajor>8</VersionMajor>
 		<VersionMinor>0</VersionMinor>
 		<VersionBuild>5</VersionBuild>
+    </RequiredLibraryReference>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></LibraryName>
+		<VersionMajor>1</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
     </RequiredLibraryReference>
 	<ClassPathEntry>
 		<ResourceReference>
